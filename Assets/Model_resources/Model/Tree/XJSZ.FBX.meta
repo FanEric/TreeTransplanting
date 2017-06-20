@@ -1,0 +1,832 @@
+fileFormatVersion: 2
+guid: 74cbacc77635384459d091715b5f9a40
+timeCreated: 1495342625
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Cylinder743
+    100002: Cylinder744
+    100004: Cylinder745
+    100006: Cylinder746
+    100008: Cylinder747
+    100010: Cylinder748
+    100012: Cylinder749
+    100014: Cylinder750
+    100016: Cylinder751
+    100018: Cylinder752
+    100020: Cylinder753
+    100022: Cylinder754
+    100024: Cylinder755
+    100026: Cylinder756
+    100028: Cylinder757
+    100030: Cylinder758
+    100032: Cylinder759
+    100034: Cylinder760
+    100036: Plane13469
+    100038: Plane13470
+    100040: Plane13471
+    100042: Plane13472
+    100044: Plane13473
+    100046: Plane13474
+    100048: Plane13475
+    100050: Plane13476
+    100052: Plane13477
+    100054: Plane13478
+    100056: Plane13479
+    100058: Plane13480
+    100060: Plane13481
+    100062: Plane13482
+    100064: Plane13483
+    100066: Plane13484
+    100068: Plane13485
+    100070: Plane13486
+    100072: Plane13487
+    100074: Plane13488
+    100076: Plane13489
+    100078: Plane13490
+    100080: Plane13491
+    100082: Plane13492
+    100084: Plane13493
+    100086: Plane13494
+    100088: Plane13495
+    100090: Plane13496
+    100092: Plane13497
+    100094: Plane13498
+    100096: Plane13499
+    100098: Plane13500
+    100100: Plane13501
+    100102: Plane13502
+    100104: Plane13503
+    100106: Plane13504
+    100108: Plane13505
+    100110: Plane13506
+    100112: Plane13507
+    100114: Plane13508
+    100116: Plane13509
+    100118: Plane13510
+    100120: Plane13511
+    100122: Plane13512
+    100124: Plane13513
+    100126: Plane13514
+    100128: Plane13515
+    100130: Plane13516
+    100132: Plane13517
+    100134: Plane13518
+    100136: Plane13519
+    100138: Plane13520
+    100140: Plane13521
+    100142: Plane13522
+    100144: Plane13523
+    100146: Plane13524
+    100148: Plane13525
+    100150: Plane13526
+    100152: Plane13527
+    100154: Plane13528
+    100156: Plane13529
+    100158: Plane13530
+    100160: Plane13531
+    100162: Plane13532
+    100164: Plane13533
+    100166: Plane13534
+    100168: Plane13535
+    100170: Plane13536
+    100172: Plane13537
+    100174: Plane13538
+    100176: Plane13539
+    100178: Plane13540
+    100180: //RootNode
+    100182: XJSZ_01
+    100184: XJSZ_02
+    100186: XJSZ_03
+    100188: XJSZ_04
+    100190: XJSZ_05
+    100192: XJSZ_06
+    100194: XJSZ_07
+    100196: XJSZ_08
+    100198: XJSZ_09
+    100200: XJSZ_10
+    100202: XJSZ_11
+    100204: XJSZ_12
+    100206: XJSZ_13
+    100208: XJSZ_14
+    100210: XJSZ_15
+    100212: XJSZ_16
+    100214: XJSZ_17
+    100216: XJSZ_18
+    100218: Collider_XJSZ
+    100220: JD
+    100222: JD_a
+    100224: JD_b
+    400000: Cylinder743
+    400002: Cylinder744
+    400004: Cylinder745
+    400006: Cylinder746
+    400008: Cylinder747
+    400010: Cylinder748
+    400012: Cylinder749
+    400014: Cylinder750
+    400016: Cylinder751
+    400018: Cylinder752
+    400020: Cylinder753
+    400022: Cylinder754
+    400024: Cylinder755
+    400026: Cylinder756
+    400028: Cylinder757
+    400030: Cylinder758
+    400032: Cylinder759
+    400034: Cylinder760
+    400036: Plane13469
+    400038: Plane13470
+    400040: Plane13471
+    400042: Plane13472
+    400044: Plane13473
+    400046: Plane13474
+    400048: Plane13475
+    400050: Plane13476
+    400052: Plane13477
+    400054: Plane13478
+    400056: Plane13479
+    400058: Plane13480
+    400060: Plane13481
+    400062: Plane13482
+    400064: Plane13483
+    400066: Plane13484
+    400068: Plane13485
+    400070: Plane13486
+    400072: Plane13487
+    400074: Plane13488
+    400076: Plane13489
+    400078: Plane13490
+    400080: Plane13491
+    400082: Plane13492
+    400084: Plane13493
+    400086: Plane13494
+    400088: Plane13495
+    400090: Plane13496
+    400092: Plane13497
+    400094: Plane13498
+    400096: Plane13499
+    400098: Plane13500
+    400100: Plane13501
+    400102: Plane13502
+    400104: Plane13503
+    400106: Plane13504
+    400108: Plane13505
+    400110: Plane13506
+    400112: Plane13507
+    400114: Plane13508
+    400116: Plane13509
+    400118: Plane13510
+    400120: Plane13511
+    400122: Plane13512
+    400124: Plane13513
+    400126: Plane13514
+    400128: Plane13515
+    400130: Plane13516
+    400132: Plane13517
+    400134: Plane13518
+    400136: Plane13519
+    400138: Plane13520
+    400140: Plane13521
+    400142: Plane13522
+    400144: Plane13523
+    400146: Plane13524
+    400148: Plane13525
+    400150: Plane13526
+    400152: Plane13527
+    400154: Plane13528
+    400156: Plane13529
+    400158: Plane13530
+    400160: Plane13531
+    400162: Plane13532
+    400164: Plane13533
+    400166: Plane13534
+    400168: Plane13535
+    400170: Plane13536
+    400172: Plane13537
+    400174: Plane13538
+    400176: Plane13539
+    400178: Plane13540
+    400180: //RootNode
+    400182: XJSZ_01
+    400184: XJSZ_02
+    400186: XJSZ_03
+    400188: XJSZ_04
+    400190: XJSZ_05
+    400192: XJSZ_06
+    400194: XJSZ_07
+    400196: XJSZ_08
+    400198: XJSZ_09
+    400200: XJSZ_10
+    400202: XJSZ_11
+    400204: XJSZ_12
+    400206: XJSZ_13
+    400208: XJSZ_14
+    400210: XJSZ_15
+    400212: XJSZ_16
+    400214: XJSZ_17
+    400216: XJSZ_18
+    400218: Collider_XJSZ
+    400220: JD
+    400222: JD_a
+    400224: JD_b
+    2300000: Cylinder743
+    2300002: Cylinder744
+    2300004: Cylinder745
+    2300006: Cylinder746
+    2300008: Cylinder747
+    2300010: Cylinder748
+    2300012: Cylinder749
+    2300014: Cylinder750
+    2300016: Cylinder751
+    2300018: Cylinder752
+    2300020: Cylinder753
+    2300022: Cylinder754
+    2300024: Cylinder755
+    2300026: Cylinder756
+    2300028: Cylinder757
+    2300030: Cylinder758
+    2300032: Cylinder759
+    2300034: Cylinder760
+    2300036: Plane13469
+    2300038: Plane13470
+    2300040: Plane13471
+    2300042: Plane13472
+    2300044: Plane13473
+    2300046: Plane13474
+    2300048: Plane13475
+    2300050: Plane13476
+    2300052: Plane13477
+    2300054: Plane13478
+    2300056: Plane13479
+    2300058: Plane13480
+    2300060: Plane13481
+    2300062: Plane13482
+    2300064: Plane13483
+    2300066: Plane13484
+    2300068: Plane13485
+    2300070: Plane13486
+    2300072: Plane13487
+    2300074: Plane13488
+    2300076: Plane13489
+    2300078: Plane13490
+    2300080: Plane13491
+    2300082: Plane13492
+    2300084: Plane13493
+    2300086: Plane13494
+    2300088: Plane13495
+    2300090: Plane13496
+    2300092: Plane13497
+    2300094: Plane13498
+    2300096: Plane13499
+    2300098: Plane13500
+    2300100: Plane13501
+    2300102: Plane13502
+    2300104: Plane13503
+    2300106: Plane13504
+    2300108: Plane13505
+    2300110: Plane13506
+    2300112: Plane13507
+    2300114: Plane13508
+    2300116: Plane13509
+    2300118: Plane13510
+    2300120: Plane13511
+    2300122: Plane13512
+    2300124: Plane13513
+    2300126: Plane13514
+    2300128: Plane13515
+    2300130: Plane13516
+    2300132: Plane13517
+    2300134: Plane13518
+    2300136: Plane13519
+    2300138: Plane13520
+    2300140: Plane13521
+    2300142: Plane13522
+    2300144: Plane13523
+    2300146: Plane13524
+    2300148: Plane13525
+    2300150: Plane13526
+    2300152: Plane13527
+    2300154: Plane13528
+    2300156: Plane13529
+    2300158: Plane13530
+    2300160: Plane13531
+    2300162: Plane13532
+    2300164: Plane13533
+    2300166: Plane13534
+    2300168: Plane13535
+    2300170: Plane13536
+    2300172: Plane13537
+    2300174: Plane13538
+    2300176: Plane13539
+    2300178: Plane13540
+    2300180: Collider_XJSZ
+    2300182: JD_a
+    2300184: JD_b
+    3300000: Cylinder743
+    3300002: Cylinder744
+    3300004: Cylinder745
+    3300006: Cylinder746
+    3300008: Cylinder747
+    3300010: Cylinder748
+    3300012: Cylinder749
+    3300014: Cylinder750
+    3300016: Cylinder751
+    3300018: Cylinder752
+    3300020: Cylinder753
+    3300022: Cylinder754
+    3300024: Cylinder755
+    3300026: Cylinder756
+    3300028: Cylinder757
+    3300030: Cylinder758
+    3300032: Cylinder759
+    3300034: Cylinder760
+    3300036: Plane13469
+    3300038: Plane13470
+    3300040: Plane13471
+    3300042: Plane13472
+    3300044: Plane13473
+    3300046: Plane13474
+    3300048: Plane13475
+    3300050: Plane13476
+    3300052: Plane13477
+    3300054: Plane13478
+    3300056: Plane13479
+    3300058: Plane13480
+    3300060: Plane13481
+    3300062: Plane13482
+    3300064: Plane13483
+    3300066: Plane13484
+    3300068: Plane13485
+    3300070: Plane13486
+    3300072: Plane13487
+    3300074: Plane13488
+    3300076: Plane13489
+    3300078: Plane13490
+    3300080: Plane13491
+    3300082: Plane13492
+    3300084: Plane13493
+    3300086: Plane13494
+    3300088: Plane13495
+    3300090: Plane13496
+    3300092: Plane13497
+    3300094: Plane13498
+    3300096: Plane13499
+    3300098: Plane13500
+    3300100: Plane13501
+    3300102: Plane13502
+    3300104: Plane13503
+    3300106: Plane13504
+    3300108: Plane13505
+    3300110: Plane13506
+    3300112: Plane13507
+    3300114: Plane13508
+    3300116: Plane13509
+    3300118: Plane13510
+    3300120: Plane13511
+    3300122: Plane13512
+    3300124: Plane13513
+    3300126: Plane13514
+    3300128: Plane13515
+    3300130: Plane13516
+    3300132: Plane13517
+    3300134: Plane13518
+    3300136: Plane13519
+    3300138: Plane13520
+    3300140: Plane13521
+    3300142: Plane13522
+    3300144: Plane13523
+    3300146: Plane13524
+    3300148: Plane13525
+    3300150: Plane13526
+    3300152: Plane13527
+    3300154: Plane13528
+    3300156: Plane13529
+    3300158: Plane13530
+    3300160: Plane13531
+    3300162: Plane13532
+    3300164: Plane13533
+    3300166: Plane13534
+    3300168: Plane13535
+    3300170: Plane13536
+    3300172: Plane13537
+    3300174: Plane13538
+    3300176: Plane13539
+    3300178: Plane13540
+    3300180: Collider_XJSZ
+    3300182: JD_a
+    3300184: JD_b
+    4300000: Plane13469
+    4300002: Plane13470
+    4300004: Plane13471
+    4300006: Cylinder743
+    4300008: Plane13472
+    4300010: Plane13473
+    4300012: Plane13474
+    4300014: Plane13475
+    4300016: Cylinder744
+    4300018: Plane13476
+    4300020: Plane13477
+    4300022: Plane13478
+    4300024: Plane13479
+    4300026: Cylinder745
+    4300028: Plane13480
+    4300030: Plane13481
+    4300032: Plane13482
+    4300034: Plane13483
+    4300036: Cylinder746
+    4300038: Plane13484
+    4300040: Plane13485
+    4300042: Plane13486
+    4300044: Plane13487
+    4300046: Cylinder747
+    4300048: Plane13488
+    4300050: Plane13489
+    4300052: Plane13490
+    4300054: Plane13491
+    4300056: Cylinder748
+    4300058: Plane13492
+    4300060: Plane13493
+    4300062: Plane13494
+    4300064: Plane13495
+    4300066: Cylinder749
+    4300068: Plane13496
+    4300070: Plane13497
+    4300072: Plane13498
+    4300074: Plane13499
+    4300076: Cylinder750
+    4300078: Plane13500
+    4300080: Plane13501
+    4300082: Plane13502
+    4300084: Plane13503
+    4300086: Cylinder751
+    4300088: Plane13504
+    4300090: Plane13505
+    4300092: Plane13506
+    4300094: Plane13507
+    4300096: Cylinder752
+    4300098: Plane13508
+    4300100: Plane13509
+    4300102: Plane13510
+    4300104: Plane13511
+    4300106: Cylinder753
+    4300108: Plane13512
+    4300110: Plane13513
+    4300112: Plane13514
+    4300114: Plane13515
+    4300116: Cylinder754
+    4300118: Plane13516
+    4300120: Plane13525
+    4300122: Plane13526
+    4300124: Plane13527
+    4300126: Cylinder757
+    4300128: Plane13528
+    4300130: Plane13521
+    4300132: Plane13522
+    4300134: Plane13523
+    4300136: Cylinder756
+    4300138: Plane13524
+    4300140: Plane13537
+    4300142: Plane13538
+    4300144: Plane13539
+    4300146: Cylinder760
+    4300148: Plane13540
+    4300150: Plane13533
+    4300152: Plane13534
+    4300154: Plane13535
+    4300156: Cylinder759
+    4300158: Plane13536
+    4300160: Plane13529
+    4300162: Plane13530
+    4300164: Plane13531
+    4300166: Cylinder758
+    4300168: Plane13532
+    4300170: Plane13517
+    4300172: Plane13518
+    4300174: Plane13519
+    4300176: Cylinder755
+    4300178: Plane13520
+    4300180: JD_a
+    4300182: JD_b
+    4300184: Collider_XJSZ
+    7400000: XJSZ
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: XJSZ
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 275
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Collider_XJSZ
+        weight: 1
+      - path: JD
+        weight: 1
+      - path: JD/JD_a
+        weight: 1
+      - path: JD/JD_b
+        weight: 1
+      - path: XJSZ_01
+        weight: 1
+      - path: XJSZ_01/Cylinder743
+        weight: 1
+      - path: XJSZ_01/Plane13469
+        weight: 1
+      - path: XJSZ_01/Plane13470
+        weight: 1
+      - path: XJSZ_01/Plane13471
+        weight: 1
+      - path: XJSZ_01/Plane13472
+        weight: 1
+      - path: XJSZ_02
+        weight: 1
+      - path: XJSZ_02/Cylinder744
+        weight: 1
+      - path: XJSZ_02/Plane13473
+        weight: 1
+      - path: XJSZ_02/Plane13474
+        weight: 1
+      - path: XJSZ_02/Plane13475
+        weight: 1
+      - path: XJSZ_02/Plane13476
+        weight: 1
+      - path: XJSZ_03
+        weight: 1
+      - path: XJSZ_03/Cylinder745
+        weight: 1
+      - path: XJSZ_03/Plane13477
+        weight: 1
+      - path: XJSZ_03/Plane13478
+        weight: 1
+      - path: XJSZ_03/Plane13479
+        weight: 1
+      - path: XJSZ_03/Plane13480
+        weight: 1
+      - path: XJSZ_04
+        weight: 1
+      - path: XJSZ_04/Cylinder746
+        weight: 1
+      - path: XJSZ_04/Plane13481
+        weight: 1
+      - path: XJSZ_04/Plane13482
+        weight: 1
+      - path: XJSZ_04/Plane13483
+        weight: 1
+      - path: XJSZ_04/Plane13484
+        weight: 1
+      - path: XJSZ_05
+        weight: 1
+      - path: XJSZ_05/Cylinder747
+        weight: 1
+      - path: XJSZ_05/Plane13485
+        weight: 1
+      - path: XJSZ_05/Plane13486
+        weight: 1
+      - path: XJSZ_05/Plane13487
+        weight: 1
+      - path: XJSZ_05/Plane13488
+        weight: 1
+      - path: XJSZ_06
+        weight: 1
+      - path: XJSZ_06/Cylinder748
+        weight: 1
+      - path: XJSZ_06/Plane13489
+        weight: 1
+      - path: XJSZ_06/Plane13490
+        weight: 1
+      - path: XJSZ_06/Plane13491
+        weight: 1
+      - path: XJSZ_06/Plane13492
+        weight: 1
+      - path: XJSZ_07
+        weight: 1
+      - path: XJSZ_07/Cylinder749
+        weight: 1
+      - path: XJSZ_07/Plane13493
+        weight: 1
+      - path: XJSZ_07/Plane13494
+        weight: 1
+      - path: XJSZ_07/Plane13495
+        weight: 1
+      - path: XJSZ_07/Plane13496
+        weight: 1
+      - path: XJSZ_08
+        weight: 1
+      - path: XJSZ_08/Cylinder750
+        weight: 1
+      - path: XJSZ_08/Plane13497
+        weight: 1
+      - path: XJSZ_08/Plane13498
+        weight: 1
+      - path: XJSZ_08/Plane13499
+        weight: 1
+      - path: XJSZ_08/Plane13500
+        weight: 1
+      - path: XJSZ_09
+        weight: 1
+      - path: XJSZ_09/Cylinder751
+        weight: 1
+      - path: XJSZ_09/Plane13501
+        weight: 1
+      - path: XJSZ_09/Plane13502
+        weight: 1
+      - path: XJSZ_09/Plane13503
+        weight: 1
+      - path: XJSZ_09/Plane13504
+        weight: 1
+      - path: XJSZ_10
+        weight: 1
+      - path: XJSZ_10/Cylinder752
+        weight: 1
+      - path: XJSZ_10/Plane13505
+        weight: 1
+      - path: XJSZ_10/Plane13506
+        weight: 1
+      - path: XJSZ_10/Plane13507
+        weight: 1
+      - path: XJSZ_10/Plane13508
+        weight: 1
+      - path: XJSZ_11
+        weight: 1
+      - path: XJSZ_11/Cylinder753
+        weight: 1
+      - path: XJSZ_11/Plane13509
+        weight: 1
+      - path: XJSZ_11/Plane13510
+        weight: 1
+      - path: XJSZ_11/Plane13511
+        weight: 1
+      - path: XJSZ_11/Plane13512
+        weight: 1
+      - path: XJSZ_12
+        weight: 1
+      - path: XJSZ_12/Cylinder754
+        weight: 1
+      - path: XJSZ_12/Plane13513
+        weight: 1
+      - path: XJSZ_12/Plane13514
+        weight: 1
+      - path: XJSZ_12/Plane13515
+        weight: 1
+      - path: XJSZ_12/Plane13516
+        weight: 1
+      - path: XJSZ_13
+        weight: 1
+      - path: XJSZ_13/Cylinder757
+        weight: 1
+      - path: XJSZ_13/Plane13525
+        weight: 1
+      - path: XJSZ_13/Plane13526
+        weight: 1
+      - path: XJSZ_13/Plane13527
+        weight: 1
+      - path: XJSZ_13/Plane13528
+        weight: 1
+      - path: XJSZ_14
+        weight: 1
+      - path: XJSZ_14/Cylinder756
+        weight: 1
+      - path: XJSZ_14/Plane13521
+        weight: 1
+      - path: XJSZ_14/Plane13522
+        weight: 1
+      - path: XJSZ_14/Plane13523
+        weight: 1
+      - path: XJSZ_14/Plane13524
+        weight: 1
+      - path: XJSZ_15
+        weight: 1
+      - path: XJSZ_15/Cylinder760
+        weight: 1
+      - path: XJSZ_15/Plane13537
+        weight: 1
+      - path: XJSZ_15/Plane13538
+        weight: 1
+      - path: XJSZ_15/Plane13539
+        weight: 1
+      - path: XJSZ_15/Plane13540
+        weight: 1
+      - path: XJSZ_16
+        weight: 1
+      - path: XJSZ_16/Cylinder759
+        weight: 1
+      - path: XJSZ_16/Plane13533
+        weight: 1
+      - path: XJSZ_16/Plane13534
+        weight: 1
+      - path: XJSZ_16/Plane13535
+        weight: 1
+      - path: XJSZ_16/Plane13536
+        weight: 1
+      - path: XJSZ_17
+        weight: 1
+      - path: XJSZ_17/Cylinder758
+        weight: 1
+      - path: XJSZ_17/Plane13529
+        weight: 1
+      - path: XJSZ_17/Plane13530
+        weight: 1
+      - path: XJSZ_17/Plane13531
+        weight: 1
+      - path: XJSZ_17/Plane13532
+        weight: 1
+      - path: XJSZ_18
+        weight: 1
+      - path: XJSZ_18/Cylinder755
+        weight: 1
+      - path: XJSZ_18/Plane13517
+        weight: 1
+      - path: XJSZ_18/Plane13518
+        weight: 1
+      - path: XJSZ_18/Plane13519
+        weight: 1
+      - path: XJSZ_18/Plane13520
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

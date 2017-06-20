@@ -1,0 +1,200 @@
+[
+  {
+    "stepId": 1,
+    "questionId": 201,
+    "questionName": "大树定义",
+    "options": [
+      {
+        "optionId": 1,
+        "optionName": "胸径25cm以上的落叶乔木（除银杏等特殊树种外）"
+      },
+      {
+        "optionId": 2,
+        "optionName": "胸径15cm以上的常绿乔木"
+      },
+      {
+        "optionId": 3,
+        "optionName": "胸径20cm以上的落叶乔木（除银杏等特殊树种外）"
+      },
+      {
+        "optionId": 4,
+        "optionName": "胸径25cm以上的常绿乔木"
+      }
+    ],
+    "answers": [ 1, 2 ],
+    "point": 1,
+    "dubStr": "大树一般指胸径在25cm以上的落叶乔木（除银杏等特殊树种外）和胸径在15cm以上的常绿乔木",
+    "dubAudio": ""
+  },
+  {
+    "stepId": 2,
+    "questionId": 202,
+    "questionName": "大树移植正常时间",
+    "options": [
+      {
+        "optionId": 1,
+        "optionName": "落叶树宜在三月进行"
+      },
+      {
+        "optionId": 2,
+        "optionName": "常绿树宜在四月上、中旬进行"
+      },
+      {
+        "optionId": 3,
+        "optionName": "大树移植落叶树宜在四月上、中旬进行"
+      },
+      {
+        "optionId": 4,
+        "optionName": "常绿树宜在三月进行"
+      },
+      {
+        "optionId": 5,
+        "optionName": "阴天无雨"
+      },
+      {
+        "optionId": 6,
+        "optionName": "晴天无风"
+      }
+    ],
+    "answers": [ 1, 2, 5, 6 ],
+    "point": 1,
+    "dubStr": "通常大树移植落叶树宜在三月进行，常绿树宜在四月上、中旬进行",
+    "dubAudio": ""
+  },
+  {
+    "stepId": 3,
+    "questionId": 203,
+    "questionName": "大树选择",
+    "options": [
+      {
+        "optionId": 1,
+        "optionName": "树木生长健壮、生长势强"
+      },
+      {
+        "optionId": 2,
+        "optionName": "无病虫害"
+      },
+      {
+        "optionId": 3,
+        "optionName": "树冠丰满"
+      },
+      {
+        "optionId": 4,
+        "optionName": "操作方便，地势平坦"
+      },
+      {
+        "optionId": 5,
+        "optionName": "道路能通行吊车、运输车辆"
+      },
+      {
+        "optionId": 6,
+        "optionName": "挖掘穴内不易积水或能排干积水的环境条件"
+      }
+    ],
+    "answers": [ 1, 2, 3, 4, 5, 6 ],
+    "point": 1,
+    "dubStr": "应选择树木生长健壮、生长势强，无病虫害，树冠丰满的大树。选择操作方便，地势平坦，道路能通行吊车、运输车辆，挖掘穴内不易积水或能排干积水的环境条件",
+    "dubAudio": ""
+  },
+  {
+    "stepId": 5,
+    "questionId": 305,
+    "questionName": "球的直径为",
+    "options": [
+      {
+        "optionId": 1,
+        "optionName": "180-240"
+      },
+      {
+        "optionId": 2,
+        "optionName": "90-180"
+      },
+      {
+        "optionId": 3,
+        "optionName": "240-270"
+      }
+    ],
+    "answers": [ 1 ],
+    "point": 1
+  },
+  {
+    "stepId": 7,
+    "questionId": 3071,
+    "questionName": "沟宽度为",
+    "options": [
+      {
+        "optionId": 1,
+        "optionName": "30-50"
+      },
+      {
+        "optionId": 2,
+        "optionName": "20-50"
+      },
+      {
+        "optionId": 3,
+        "optionName": "50-60"
+      }
+    ],
+    "answers": [ 1 ],
+    "point": 1
+  },
+  {
+    "stepId": 7,
+    "questionId": 3072,
+    "questionName": "沟的深度（直径为210）为",
+    "options": [
+      {
+        "optionId": 1,
+        "optionName": "140"
+      },
+      {
+        "optionId": 2,
+        "optionName": "130"
+      },
+      {
+        "optionId": 3,
+        "optionName": "180"
+      }
+    ],
+    "answers": [ 1 ],
+    "point": 1
+  },
+  {
+    "stepId": 9,
+    "questionId": 309,
+    "questionName": "底部直径选项（顶部直径为210）",
+    "options": [
+      {
+        "optionId": 1,
+        "optionName": "70"
+      },
+      {
+        "optionId": 2,
+        "optionName": "50"
+      },
+      {
+        "optionId": 3,
+        "optionName": "80"
+      }
+    ],
+    "answers": [ 1 ],
+    "point": 1
+  },
+  {
+    "stepId": 15,
+    "questionId": 315,
+    "questionName": "装车方向",
+    "options": [
+      {
+        "optionId": 1,
+        "optionName": "树冠向后，土球向前"
+      },
+      {
+        "optionId": 2,
+        "optionName": "树冠向前，土球向后"
+      }
+    ],
+    "answers": [ 1 ],
+    "point": 1
+  }
+]
