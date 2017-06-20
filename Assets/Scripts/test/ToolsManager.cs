@@ -99,34 +99,18 @@ public class ToolsManager : GameControl
         }
     }
 
-    void SetCursor()
-    {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            Cursor.SetCursor(null, hotSpot, cursorMode);
-            return;
-        }
-        if (changeCursor)
-        {
-            Cursor.SetCursor(kCursorCur, hotSpot, cursorMode);
-        }
-        else
-        {
-            Cursor.SetCursor(null, hotSpot, cursorMode);
-        }
-    }
-
     public void OnGrabTool(string toolName)
     {
-		changeCursor = true;
+        changeCursor = true;
         toolName = toolName.Substring(7);
         HideOtherTools();
 
-        switch (toolName) {
-		    case "ShuaZi":
-			    kYQT.SetActive (true);
+        switch (toolName)
+        {
+            case "ShuaZi":
+                kYQT.SetActive(true);
                 kCursorCur = kCursorMS1;
-			    break;
+                break;
             case "ShuiTong":
                 kCursorCur = kCursorST;
                 kColliderSZ.gameObject.SetActive(true);
@@ -142,15 +126,33 @@ public class ToolsManager : GameControl
 
                 break;
             default:
-			    break;
-		}
+                break;
+        }
     }
 
     void HideOtherTools()
     {
         kYQT.SetActive(false);
         kColliderSZ.gameObject.SetActive(false);
+        kColliderXJSZ.gameObject.SetActive(false);
 
+    }
+
+    void SetCursor()
+    {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            Cursor.SetCursor(null, hotSpot, cursorMode);
+            return;
+        }
+        if (changeCursor)
+        {
+            Cursor.SetCursor(kCursorCur, hotSpot, cursorMode);
+        }
+        else
+        {
+            Cursor.SetCursor(null, hotSpot, cursorMode);
+        }
     }
 
 

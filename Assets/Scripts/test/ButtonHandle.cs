@@ -8,7 +8,7 @@ public class ButtonHandle : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     ToolsManager toolManager;
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         toolManager = GameObject.FindObjectOfType<ToolsManager>();
     }
