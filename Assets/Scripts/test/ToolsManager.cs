@@ -24,7 +24,7 @@ public class ToolsManager : GameControl
     public Collider kColliderXJSZ;
 
     [HideInInspector]
-    public Texture2D kCursorCur;
+    public Texture2D kCursorCur = null;
     public GameObject kYQT;
 
     //private Transform _selectedTool;
@@ -36,10 +36,10 @@ public class ToolsManager : GameControl
     private GameObject hoverObj;
 
     private int step = 1;
-    Button[] btnTools;
+    Toggle[] btnTools;
     public override void GameInit()
     {
-        btnTools = toolsContainer.GetComponentsInChildren<Button>();
+        btnTools = toolsContainer.GetComponentsInChildren<Toggle>();
         for (int i = 0; i < btnTools.Length; i++)
         {
             btnTools[i].enabled = false;
@@ -114,8 +114,6 @@ public class ToolsManager : GameControl
             case "ShuiTong":
                 kCursorCur = kCursorST;
                 kColliderSZ.gameObject.SetActive(true);
-                //点击水桶后让油漆桶消失
-                kYQT.SetActive(false);
                 break;
             case "JianDao":
                 kCursorCur = kCursorJD;
@@ -142,17 +140,10 @@ public class ToolsManager : GameControl
     {
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            Cursor.SetCursor(null, hotSpot, cursorMode);
+            Cursor.SetCursor(null, Vector2.zero, cursorMode);
             return;
         }
-        if (changeCursor)
-        {
-            Cursor.SetCursor(kCursorCur, hotSpot, cursorMode);
-        }
-        else
-        {
-            Cursor.SetCursor(null, hotSpot, cursorMode);
-        }
+        Cursor.SetCursor(kCursorCur, hotSpot, cursorMode);
     }
 
 
