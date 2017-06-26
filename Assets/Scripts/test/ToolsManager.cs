@@ -67,7 +67,7 @@ public class ToolsManager : GameControl
             hoverObj.GetComponent<MeshRenderer>().enabled = true;
             if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
             {
-                hoverObj.GetComponent<BaseStepCheck>().DoStep();
+                StartCoroutine(hoverObj.GetComponent<BaseStepCheck>().DoStep());
             }
         }
         else

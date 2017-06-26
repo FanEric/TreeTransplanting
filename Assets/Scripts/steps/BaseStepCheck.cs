@@ -12,9 +12,14 @@ public class BaseStepCheck : MonoBehaviour
         audioManager = GameObject.FindObjectOfType<AudioManager>();
     }
 
-    public virtual void DoStep()
-    {
+    //public virtual void DoStep()
+    //{
 
+    //}
+
+    public virtual IEnumerator DoStep()
+    {
+        yield return 0;
     }
 }
 

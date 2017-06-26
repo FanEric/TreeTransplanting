@@ -1,5 +1,4 @@
-
 *.csproj
-
-/mtk/Library
 *.sln
+/Library
+
