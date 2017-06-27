@@ -33,15 +33,12 @@ public class ToolHandle : MonoBehaviour {
         }
         else
         {
+            Animator[] anims = kControledObj.GetComponentsInChildren<Animator>();
+            for (int i = 0; i < anims.Length; i++)
+            {
+                anims[i].enabled = false;
+            }
             kControledObj.SetActive(false);
-            //if (toolManager.kCursorCur == kCursor)
-            //{
-            //    kControledObj.SetActive(false);
-            //}
-            //if (kCursorSpare != null && toolManager.kCursorCur == kCursorSpare)
-            //{
-            //    kControledObj.SetActive(false);
-            //}
         }
     }
 
