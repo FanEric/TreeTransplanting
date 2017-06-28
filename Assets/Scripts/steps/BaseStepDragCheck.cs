@@ -1,42 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
+using System;
 
-public class BaseStepDragCheck : MonoBehaviour {
+public class BaseStepDragCheck : MonoBehaviour, IDragHandler, IPointerDownHandler
+{
+    protected ToolsManager toolsManager;
+    protected AudioManager audioManager;
 
-    public float totalDistance = 10f;
-    RaycastHit hit;
+    Vector2 startPos = Vector2.zero;
+    private bool isDone = false;
 
-    float lastMousePosX = 0;
-    // Use this for initialization
-    void Start()
+    void Awake()
     {
-
+        toolsManager = GameObject.FindObjectOfType<ToolsManager>();
+        audioManager = GameObject.FindObjectOfType<AudioManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual IEnumerator DoStep()
     {
-        if (Input.GetMouseButton(0))
+        yield return 0;
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        transform.Translate(Vector3.forward * 1f / 100f, Space.Self);
+        //Debug.Log("distance: " + Vector2.SqrMagnitude(eventData.position - startPos));
+        if (!isDone && (Vector2.SqrMagnitude(eventData.position - startPos)) > 10000f)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 5))
-            {
-                Transform hitObj = hit.collider.transform;
-                if (hitObj == transform)
-                {
-                    Debug.Log("111");
-                    if (lastMousePosX != 0)
-                    {
-                        float rate = Input.mousePosition.x - lastMousePosX;
-                        transform.Translate(Vector3.forward * rate / 100f, Space.Self);
-                    }
-                    lastMousePosX = Input.mousePosition.x;
-                }
-            }
-
-
-           
+            Debug.Log("over!");
+            isDone = true;
+            StartCoroutine(DoStep());
         }
     }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        startPos = eventData.position;
+        //Debug.Log("startPos: " + startPos.ToString());
+    }
+
 }
 

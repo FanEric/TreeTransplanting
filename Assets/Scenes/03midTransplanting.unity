@@ -167,6 +167,20 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000013276135822, guid: 350216cf1c72fdb46b5ac8dd4961ed2d,
     type: 2}
   m_PrefabInternal: {fileID: 2047844349}
+--- !u!114 &145502276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 145502275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -768656878, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!114 &145502284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -674,10 +688,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 532696743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c98fddf3b48e88342aff49afc5cfd7e1, type: 3}
+  m_Script: {fileID: 11500000, guid: c9e0472e59e69404b9c23aef8e46b611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalDistance: 10
+  kAnim: {fileID: 1059110921}
 --- !u!4 &557846913 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000013315292206, guid: 7befcd0f74daaee41aa8fd1453b569e9,
@@ -724,6 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a0181a7c6fc8f4bb291fc5bc0c3b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventSystem: {fileID: 994121549}
   toolsContainer: {fileID: 1028543820}
   kAnimBJ: {fileID: 1533709915}
   kAnimMSHQ: {fileID: 1533709913}

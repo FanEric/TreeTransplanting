@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Collections;
+using System.Collections.Generic;
 
 public class ToolsManager : GameControl
 {
+    public GraphicRaycaster graphicRaycaster;
+    public EventSystem eventSystem;
     public Transform toolsContainer;
 
     public Animator kAnimBJ;
@@ -60,24 +62,24 @@ public class ToolsManager : GameControl
 	{
         SetCursor();
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 10))
-        {
-            hoverObj = hit.collider.gameObject;
-            hoverObj.GetComponent<MeshRenderer>().enabled = true;
-            if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
-            {
-                StartCoroutine(hoverObj.GetComponent<BaseStepCheck>().DoStep());
-            }
-        }
-        else
-        {
-            if (hoverObj != null)
-            {
-                hoverObj.GetComponent<MeshRenderer>().enabled = false;
-                hoverObj = null;
-            }
-        }
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //if (Physics.Raycast(ray, out hit, 10))
+        //{
+        //    hoverObj = hit.collider.gameObject;
+        //    hoverObj.GetComponent<MeshRenderer>().enabled = true;
+        //    if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        //    {
+        //        StartCoroutine(hoverObj.GetComponent<BaseStepCheck>().DoStep());
+        //    }
+        //}
+        //else
+        //{
+        //    if (hoverObj != null)
+        //    {
+        //        hoverObj.GetComponent<MeshRenderer>().enabled = false;
+        //        hoverObj = null;
+        //    }
+        //}
     }
 
     public bool CheckStep(int s)
@@ -138,7 +140,25 @@ public class ToolsManager : GameControl
 
     void SetCursor()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
+        ////加上这段以后，当鼠标悬浮在3D物体上的时候也会变回原来的样子
+        //if (EventSystem.current.IsPointerOverGameObject())
+        //{
+        //    Cursor.SetCursor(null, Vector2.zero, cursorMode);
+        //    return;
+        //}
+
+        //PointerEventData eventData = new PointerEventData(eventSystem);
+        //List<GameObject> hoveredObjs =  eventData.hovered;
+        //Debug.Log("hoveredObjs.Count: " + hoveredObjs.Count);
+        //for (int i = 0; i < hoveredObjs.Count; i++)
+        //{
+        //    if (hoveredObjs[i].layer == LayerMask.NameToLayer("UI"))
+        //    {
+        //        Cursor.SetCursor(null, Vector2.zero, cursorMode);
+        //        return;
+        //    }
+        //}
+        if (CheckGuiRaycastObjects())
         {
             Cursor.SetCursor(null, Vector2.zero, cursorMode);
             return;
@@ -146,7 +166,17 @@ public class ToolsManager : GameControl
         Cursor.SetCursor(kCursorCur, hotSpot, cursorMode);
     }
 
+    bool CheckGuiRaycastObjects()
+    {
+        PointerEventData eventData = new PointerEventData(eventSystem);
+        eventData.pressPosition = Input.mousePosition;
+        eventData.position = Input.mousePosition;
 
+        List<RaycastResult> list = new List<RaycastResult>();
+        graphicRaycaster.Raycast(eventData, list);
+        //Debug.Log(list.Count);
+        return list.Count > 0;
+    }
 
     public void OnReleaseTool()
     {
