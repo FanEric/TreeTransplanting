@@ -19,5 +19,7 @@ public class YQTCheck : BaseStepCheck
             toolsManager.kCursorCur = kCursor;
         }
     }
+
+    //public 
 }
 

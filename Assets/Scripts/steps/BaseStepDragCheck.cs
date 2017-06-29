@@ -3,13 +3,13 @@ using System.Collections;
 using UnityEngine.EventSystems;
 using System;
 
-public class BaseStepDragCheck : MonoBehaviour, IDragHandler, IPointerDownHandler
+public class BaseStepDragCheck : MonoBehaviour, IDragHandler, IBeginDragHandler
 {
     protected ToolsManager toolsManager;
     protected AudioManager audioManager;
 
-    Vector2 startPos = Vector2.zero;
     private bool isDone = false;
+    private bool doneStep = false;
 
     void Awake()
     {
@@ -24,21 +24,38 @@ public class BaseStepDragCheck : MonoBehaviour, IDragHandler, IPointerDownHandle
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.Translate(Vector3.forward * 1f / 100f, Space.Self);
-        //Debug.Log("distance: " + Vector2.SqrMagnitude(eventData.position - startPos));
-        if (!isDone && (Vector2.SqrMagnitude(eventData.position - startPos)) > 10000f)
+        if (doneStep)
         {
-            Debug.Log("over!");
-            isDone = true;
-            StartCoroutine(DoStep());
+            if (!CheckDistance())
+            {
+                transform.Translate(Vector3.forward * 1f / 100f, Space.Self);
+            }
+            else if (!isDone)
+            {
+                isDone = true;
+                StartCoroutine(DoStep());
+            }
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public virtual bool CheckStep()
     {
-        startPos = eventData.position;
-        //Debug.Log("startPos: " + startPos.ToString());
+        return false;
     }
 
+
+    public virtual bool CheckDistance()
+    {
+        return false;
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (CheckStep())
+        {
+            doneStep = true;
+
+        }
+    }
 }
 
