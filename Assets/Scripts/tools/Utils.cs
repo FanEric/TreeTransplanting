@@ -4,19 +4,20 @@ using SimpleJSON;
 
 public class Utils : MonoBehaviour
 {
+    //
+    private static List<QuestionEntity> qes = new List<QuestionEntity>();
 
     /// <summary>
     /// 从json中解析问题
     /// </summary>
     /// <returns></returns>
-    public static List<QuestionEntity> ParseQuestions()
+    public static void ParseQuestions()
     {
-        List<QuestionEntity> qes = new List<QuestionEntity>();
         TextAsset file = Resources.Load("QuestionCollections") as TextAsset;
         if (file == null)
         {
             Debug.LogError("QuestionCollections" + "资源不存在");
-            return null;
+            return;
         }
 
         JSONNode node = JSON.Parse(file.text);
@@ -50,7 +51,20 @@ public class Utils : MonoBehaviour
             }
             qes.Add(qe);
         }
-        return qes;
+    }
+
+
+
+    public static QuestionEntity GetQuestionById(int id)
+    {
+        for (int i = 0; i < qes.Count; i++)
+        {
+            if (qes[i].questionId == id)
+            {
+                return qes[i];
+            }
+        }
+        return null;
     }
 
 }

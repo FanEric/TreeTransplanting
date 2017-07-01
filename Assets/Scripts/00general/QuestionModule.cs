@@ -2,11 +2,11 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using DG.Tweening;
 
-public class QuestionTest : GameControl
+public delegate void QuestionOverHandle();
+
+public class QuestionModule : MonoBehaviour
 {
-
 	public Sprite kSmile;
 	public Sprite kCry;
 	public AudioClip kRight;
@@ -18,35 +18,20 @@ public class QuestionTest : GameControl
     private Button kSubmit;
     private Image kMotion;
 	private AudioSource kSource;
+    private AudioManager audioManager;
+    private ScoreManager scoreManager;
 
-
-    public AudioManager audioManager;
-	public ScoreManager scoreManager;
-
-    private List<QuestionEntity> qes = new List<QuestionEntity>();
     private List<int> correctAnswer = new List<int>();
-    private int cQuestionId = 201;
     private int cPoint = 0;
 
-    // Use this for initialization
-	void Start () {
+    public event QuestionOverHandle questionOverEvent;
 
-        mTrans = transform;
-        if (GameInfo.gameMode == GameMode.PRECTICE)
-            GameObject.FindObjectOfType<SystemSettings>().ShowBackBtn();
-        qes = Utils.ParseQuestions();
 
-        InitUI();
-    }
-
-	public override void GameBegin()
-	{
-        //Debug.Log("GameBegin");
-		SetupQuestionUI(cQuestionId);
-	}
-
-    void InitUI()
+    public void Init()
     {
+        mTrans = transform;
+        audioManager = GameObject.FindObjectOfType<AudioManager>();
+        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
         kQuestionName = mTrans.FindChild("Text_questionName").GetComponent<Text>();
         kOptions = mTrans.FindChild("Options").GetComponentsInChildren<Toggle>();
         kSubmit = mTrans.FindChild("Button_ok").GetComponent<Button>();
@@ -58,9 +43,14 @@ public class QuestionTest : GameControl
         kMotion.gameObject.SetActive(false);
     }
 
-    void SetupQuestionUI(int id)
+    public void Show(bool toShow)
     {
-        QuestionEntity qe = GetQuestionById(id);
+        gameObject.SetActive(toShow);
+    }
+
+    public void RequestQuestion(int id)
+    {
+        QuestionEntity qe = Utils.GetQuestionById(id);
         if (qe == null)
         {
             Debug.LogError("问题id不存在！");
@@ -82,11 +72,10 @@ public class QuestionTest : GameControl
         }
         correctAnswer = qe.answers;
         cPoint = qe.point;
-        //foreach (int item in correctAnswer)
-        //{
-        //    Debug.Log("correctAnswer: " + item);
-        //}
     }
+
+
+
 
     void ResetToggles()
     {
@@ -133,13 +122,9 @@ public class QuestionTest : GameControl
         kMotion.GetComponent<AutoHide>().Show();
 
 		ResetToggles();
-		cQuestionId++;
-		if (cQuestionId > 203)
-		{
-			SceneManager.LoadScene("03midTransplanting");
-			return;
-		}
-		SetupQuestionUI(cQuestionId);
+
+        if (questionOverEvent != null)
+            questionOverEvent();
     }
 
     void DoAnswerWrong()
@@ -183,18 +168,6 @@ public class QuestionTest : GameControl
         return output;
     }
 
-    private QuestionEntity GetQuestionById(int id)
-    {
-        for (int i = 0; i < qes.Count; i++)
-        {
-            if (qes[i].questionId == id)
-            {
-                return qes[i];
-            }
-        }
-        return null;
-    }
-	
 	
 }
 

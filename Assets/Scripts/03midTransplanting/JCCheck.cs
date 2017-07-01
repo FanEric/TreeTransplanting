@@ -2,11 +2,13 @@
 using System.Collections;
 
 /// <summary>
-/// 卷尺
+/// 卷尺（高度）
 /// </summary>
-public class JC2Check : BaseStepDragCheck {
+public class JCCheck : BaseStepDragCheck {
     public Animator kAnim;
     public GameObject kMark;
+    public GameObject kJT2;
+    public GameObject kJC2;
 
     public override IEnumerator DoStep()
     {
@@ -16,19 +18,20 @@ public class JC2Check : BaseStepDragCheck {
         kAnim.enabled = true;
         AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
         yield return new WaitForSeconds(cClip.length);
-
-        kMark.SetActive(true);
         //kAnim.gameObject.SetActive(false);
+        kMark.SetActive(true);
+        kJT2.SetActive(true);
+        kJC2.SetActive(true);
     }
 
     public override bool CheckStep()
     {
-        return true;
+        return toolsManager.CheckStep(6);
     }
 
     public override bool CheckDistance()
     {
-        if (transform.localPosition.x > 0.512f)
+        if (transform.localPosition.z > -0.48f)
             return true;
         return false;
     }

@@ -3,10 +3,13 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 
-public class ToolsManager : GameControl
+public class ToolsManager : MonoBehaviour
 {
     public GraphicRaycaster graphicRaycaster;
     public EventSystem eventSystem;
+
+    public QuestionModule questionModule;
+
     public Transform toolsContainer;
 
     public Animator kAnimBJ;
@@ -29,8 +32,10 @@ public class ToolsManager : GameControl
     public Texture2D kCursorCur = null;
     public GameObject kYQT;
 
+    private GameObject kBeginObj;
+
     //private Transform _selectedTool;
-	private bool changeCursor;
+    private bool changeCursor;
 	private CursorMode cursorMode = CursorMode.Auto;
 	private Vector2 hotSpot = new Vector2(32, 32);
 
@@ -39,17 +44,23 @@ public class ToolsManager : GameControl
 
     private int step = 1;
     Toggle[] btnTools;
-    public override void GameInit()
+    private int cQuestionId = 305;
+
+    void Start()
     {
+        kBeginObj = GameObject.Find("RawImage_bgBlur");
+        kBeginObj.GetComponentInChildren<Button>().onClick.AddListener(OnBegin);
+        InitQuestionModule();
+
         btnTools = toolsContainer.GetComponentsInChildren<Toggle>();
         for (int i = 0; i < btnTools.Length; i++)
         {
             btnTools[i].enabled = false;
         }
     }
-
-    public override void GameBegin()
+    void OnBegin()
     {
+        kBeginObj.SetActive(false);
         for (int i = 0; i < btnTools.Length; i++)
         {
             btnTools[i].enabled = true;
@@ -58,28 +69,29 @@ public class ToolsManager : GameControl
         audioManager.PlayAudio(304, "对已选好的树木,在树干阴面进行标注（满足对蔽阴和光照的要求）");
     }
 
+    void InitQuestionModule()
+    {
+        Utils.ParseQuestions();
+        questionModule.Init();
+        questionModule.questionOverEvent += DoQuestionOver;
+        questionModule.Show(false);
+    }
+
+    public void ShowQuestion()
+    {
+        questionModule.Show(true);
+        questionModule.RequestQuestion(cQuestionId);
+    }
+
+    private void DoQuestionOver()
+    {
+        cQuestionId = 3071;
+        questionModule.Show(false);
+    }
+
     void Update()
 	{
         SetCursor();
-
-        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //if (Physics.Raycast(ray, out hit, 10))
-        //{
-        //    hoverObj = hit.collider.gameObject;
-        //    hoverObj.GetComponent<MeshRenderer>().enabled = true;
-        //    if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
-        //    {
-        //        StartCoroutine(hoverObj.GetComponent<BaseStepCheck>().DoStep());
-        //    }
-        //}
-        //else
-        //{
-        //    if (hoverObj != null)
-        //    {
-        //        hoverObj.GetComponent<MeshRenderer>().enabled = false;
-        //        hoverObj = null;
-        //    }
-        //}
     }
 
     public bool CheckStep(int s)

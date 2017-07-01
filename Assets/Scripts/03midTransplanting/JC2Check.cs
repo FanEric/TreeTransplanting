@@ -1,27 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TQCheck : BaseStepDragCheck
-{
+/// <summary>
+/// 卷尺（胸径）
+/// </summary>
+public class JC2Check : BaseStepDragCheck {
     public Animator kAnim;
+    public GameObject kMark;
+
     public override IEnumerator DoStep()
     {
         GetComponent<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
+        transform.GetChild(0).gameObject.SetActive(false);
         kAnim.enabled = true;
         AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
         yield return new WaitForSeconds(cClip.length);
-        Debug.Log("finish1111");
+
+        kMark.SetActive(true);
+        //kAnim.gameObject.SetActive(false);
+        toolsManager.ShowQuestion();
     }
 
     public override bool CheckStep()
     {
-        return toolsManager.CheckStep(5);
+        return true;
     }
 
     public override bool CheckDistance()
     {
-        if (transform.localPosition.x > 0.522f)
+        if (transform.localPosition.x > 0.512f)
             return true;
         return false;
     }
