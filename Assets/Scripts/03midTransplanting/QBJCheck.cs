@@ -2,13 +2,11 @@
 using System.Collections;
 
 /// <summary>
-/// 卷尺（高度）
+/// 拖动卷尺在4个方向上测量半径，连成圆圈
 /// </summary>
-public class JCCheck : BaseStepDragCheck {
+public class QBJCheck : BaseStepDragCheck
+{
     public Animator kAnim;
-    public GameObject kMark;
-    public GameObject kJT2;
-    public GameObject kJC2;
 
     public override IEnumerator DoStep()
     {
@@ -18,22 +16,18 @@ public class JCCheck : BaseStepDragCheck {
         kAnim.enabled = true;
         AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
         toolsManager.SetAnimating(true);
-        yield return new WaitForSeconds(2f);
-        //yield return new WaitForSeconds(cClip.length);
+        yield return new WaitForSeconds(cClip.length);
         toolsManager.SetAnimating(false);
-        kMark.SetActive(true);
-        kJT2.SetActive(true);
-        kJC2.SetActive(true);
     }
 
     public override bool CheckStep()
     {
-        return toolsManager.CheckStep(6);
+        return toolsManager.CheckStep(7);
     }
 
     public override bool CheckDistance()
     {
-        if (transform.localPosition.z > -0.48f)
+        if (transform.localPosition.x < 0.549f)
             return true;
         return false;
     }

@@ -13,7 +13,9 @@ public class JDCheck : BaseStepCheck
             kAnim.enabled = true;
 
             AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
+            toolsManager.SetAnimating(true);
             yield return new WaitForSeconds(cClip.length);
+            toolsManager.SetAnimating(false);
         }
     }
 }

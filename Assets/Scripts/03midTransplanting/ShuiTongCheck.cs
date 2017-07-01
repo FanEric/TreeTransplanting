@@ -13,7 +13,9 @@ public class ShuiTongCheck : BaseStepCheck
             kST.SetActive(true);
 
             AnimationClip cClip = kST.GetComponent<Animator>().runtimeAnimatorController.animationClips[0];
+            toolsManager.SetAnimating(true);
             yield return new WaitForSeconds(cClip.length);
+            toolsManager.SetAnimating(false);
         }
     }
 }

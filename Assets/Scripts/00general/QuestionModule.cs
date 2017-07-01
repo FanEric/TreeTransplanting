@@ -26,12 +26,16 @@ public class QuestionModule : MonoBehaviour
 
     public event QuestionOverHandle questionOverEvent;
 
+    void Awake()
+    {
+        audioManager = GameObject.FindObjectOfType<AudioManager>();
+        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
+    }
 
     public void Init()
     {
         mTrans = transform;
-        audioManager = GameObject.FindObjectOfType<AudioManager>();
-        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
+        
         kQuestionName = mTrans.FindChild("Text_questionName").GetComponent<Text>();
         kOptions = mTrans.FindChild("Options").GetComponentsInChildren<Toggle>();
         kSubmit = mTrans.FindChild("Button_ok").GetComponent<Button>();
@@ -57,6 +61,7 @@ public class QuestionModule : MonoBehaviour
             return;
         }
         kQuestionName.text = qe.questionName;
+        //Debug.Log("qe.dubStr: " + qe.dubStr);
         audioManager.PlayAudio(id, qe.dubStr);
         List<OptionEntity> randomOptions = GetRandomOptions(qe.options);
         int optionsCount = randomOptions.Count;
@@ -73,9 +78,6 @@ public class QuestionModule : MonoBehaviour
         correctAnswer = qe.answers;
         cPoint = qe.point;
     }
-
-
-
 
     void ResetToggles()
     {
@@ -122,6 +124,7 @@ public class QuestionModule : MonoBehaviour
         kMotion.GetComponent<AutoHide>().Show();
 
 		ResetToggles();
+        audioManager.Clear();
 
         if (questionOverEvent != null)
             questionOverEvent();

@@ -7,6 +7,7 @@ using System.Collections;
 public class JC2Check : BaseStepDragCheck {
     public Animator kAnim;
     public GameObject kMark;
+    public GameObject kNext;
 
     public override IEnumerator DoStep()
     {
@@ -15,10 +16,12 @@ public class JC2Check : BaseStepDragCheck {
         transform.GetChild(0).gameObject.SetActive(false);
         kAnim.enabled = true;
         AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
-        yield return new WaitForSeconds(cClip.length);
+        toolsManager.SetAnimating(true);
+        yield return new WaitForSeconds(1.5f);
+        //yield return new WaitForSeconds(cClip.length);
+        toolsManager.SetAnimating(false);
 
         kMark.SetActive(true);
-        //kAnim.gameObject.SetActive(false);
         toolsManager.ShowQuestion();
     }
 
@@ -32,6 +35,12 @@ public class JC2Check : BaseStepDragCheck {
         if (transform.localPosition.x > 0.512f)
             return true;
         return false;
+    }
+
+    public void GotoNextStep()
+    {
+        kAnim.transform.parent.gameObject.SetActive(false);
+        kNext.SetActive(true);
     }
 }
 

@@ -3,6 +3,9 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 
+/// <summary>
+/// 移植过程管理类
+/// </summary>
 public class ToolsManager : MonoBehaviour
 {
     public GraphicRaycaster graphicRaycaster;
@@ -12,39 +15,23 @@ public class ToolsManager : MonoBehaviour
 
     public Transform toolsContainer;
 
-    public Animator kAnimBJ;
-    public Animator kAnimMSHQ;
-    public Animator kAnimMSZS;
-
     public AudioManager audioManager;
     public ScoreManager scoreManager;
 
-    public Texture2D kCursorMS1;
-    public Texture2D kCursorMS2;
-    public Texture2D kCursorST;
-    public Texture2D kCursorJD;
-    public Texture2D kCursorTQ;
-
-    public Collider kColliderSZ;
-    public Collider kColliderXJSZ;
-
     [HideInInspector]
     public Texture2D kCursorCur = null;
-    public GameObject kYQT;
 
     private GameObject kBeginObj;
 
-    //private Transform _selectedTool;
-    private bool changeCursor;
 	private CursorMode cursorMode = CursorMode.Auto;
 	private Vector2 hotSpot = new Vector2(32, 32);
 
-    private RaycastHit hit;
-    private GameObject hoverObj;
-
     private int step = 1;
     Toggle[] btnTools;
+
     private int cQuestionId = 305;
+    //是否正在播放动画，如果是，则不能选择别的工具
+    private bool isAnimating = false;
 
     void Start()
     {
@@ -53,28 +40,38 @@ public class ToolsManager : MonoBehaviour
         InitQuestionModule();
 
         btnTools = toolsContainer.GetComponentsInChildren<Toggle>();
-        for (int i = 0; i < btnTools.Length; i++)
-        {
-            btnTools[i].enabled = false;
-        }
+        //EnableTools(false);
+        SetAnimating(true);
     }
     void OnBegin()
     {
         kBeginObj.SetActive(false);
-        for (int i = 0; i < btnTools.Length; i++)
-        {
-            btnTools[i].enabled = true;
-        }
+        //EnableTools(true);
+        SetAnimating(false);
         //Debug.Log("GameBegin");
         audioManager.PlayAudio(304, "对已选好的树木,在树干阴面进行标注（满足对蔽阴和光照的要求）");
     }
 
+    void EnableTools(bool isEnable)
+    {
+        for (int i = 0; i < btnTools.Length; i++)
+        {
+            btnTools[i].enabled = isEnable;
+        }
+    }
+
     void InitQuestionModule()
     {
+        //测试用，发布的时候可注释掉
         Utils.ParseQuestions();
         questionModule.Init();
         questionModule.questionOverEvent += DoQuestionOver;
         questionModule.Show(false);
+    }
+
+    void OnDestroy()
+    {
+        questionModule.questionOverEvent -= DoQuestionOver;
     }
 
     public void ShowQuestion()
@@ -85,13 +82,12 @@ public class ToolsManager : MonoBehaviour
 
     private void DoQuestionOver()
     {
-        cQuestionId = 3071;
+        if (cQuestionId == 305)
+        {
+            cQuestionId = 3071;
+            GameObject.FindObjectOfType<JC2Check>().GotoNextStep();
+        }
         questionModule.Show(false);
-    }
-
-    void Update()
-	{
-        SetCursor();
     }
 
     public bool CheckStep(int s)
@@ -113,63 +109,19 @@ public class ToolsManager : MonoBehaviour
         }
     }
 
-    public void OnGrabTool(string toolName)
+    public void SetAnimating(bool isAnim)
     {
-        changeCursor = true;
-        toolName = toolName.Substring(7);
-        HideOtherTools();
-
-        switch (toolName)
-        {
-            case "ShuaZi":
-                kYQT.SetActive(true);
-                kCursorCur = kCursorMS1;
-                break;
-            case "ShuiTong":
-                kCursorCur = kCursorST;
-                kColliderSZ.gameObject.SetActive(true);
-                break;
-            case "JianDao":
-                kCursorCur = kCursorJD;
-                kColliderXJSZ.gameObject.SetActive(true);
-                break;
-            case "TieQiao":
-                kCursorCur = kCursorTQ;
-
-                break;
-            default:
-                break;
-        }
+        isAnimating = isAnim;
     }
 
-    void HideOtherTools()
-    {
-        kYQT.SetActive(false);
-        kColliderSZ.gameObject.SetActive(false);
-        kColliderXJSZ.gameObject.SetActive(false);
-
+    void Update()
+	{
+        EnableTools(!isAnimating);
+        SetCursor();
     }
 
     void SetCursor()
     {
-        ////加上这段以后，当鼠标悬浮在3D物体上的时候也会变回原来的样子
-        //if (EventSystem.current.IsPointerOverGameObject())
-        //{
-        //    Cursor.SetCursor(null, Vector2.zero, cursorMode);
-        //    return;
-        //}
-
-        //PointerEventData eventData = new PointerEventData(eventSystem);
-        //List<GameObject> hoveredObjs =  eventData.hovered;
-        //Debug.Log("hoveredObjs.Count: " + hoveredObjs.Count);
-        //for (int i = 0; i < hoveredObjs.Count; i++)
-        //{
-        //    if (hoveredObjs[i].layer == LayerMask.NameToLayer("UI"))
-        //    {
-        //        Cursor.SetCursor(null, Vector2.zero, cursorMode);
-        //        return;
-        //    }
-        //}
         if (CheckGuiRaycastObjects())
         {
             Cursor.SetCursor(null, Vector2.zero, cursorMode);
@@ -188,11 +140,6 @@ public class ToolsManager : MonoBehaviour
         graphicRaycaster.Raycast(eventData, list);
         //Debug.Log(list.Count);
         return list.Count > 0;
-    }
-
-    public void OnReleaseTool()
-    {
-        
     }
 
 //    void Update()

@@ -5,7 +5,7 @@ using SimpleJSON;
 public class Utils : MonoBehaviour
 {
     //
-    private static List<QuestionEntity> qes = new List<QuestionEntity>();
+    private static List<QuestionEntity> qes = null;
 
     /// <summary>
     /// 从json中解析问题
@@ -13,6 +13,8 @@ public class Utils : MonoBehaviour
     /// <returns></returns>
     public static void ParseQuestions()
     {
+        if (qes != null) return;
+        qes = new List<QuestionEntity>();
         TextAsset file = Resources.Load("QuestionCollections") as TextAsset;
         if (file == null)
         {

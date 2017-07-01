@@ -53,5 +53,11 @@ public class AudioManager : MonoBehaviour {
         source.Play();
         kDubStr.text = dubStr;
     }
+
+    public void Clear()
+    {
+        kDubStr.text = "";
+        source.clip = null;
+    }
 }
 
