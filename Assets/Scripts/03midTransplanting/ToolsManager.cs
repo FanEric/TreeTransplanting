@@ -49,7 +49,7 @@ public class ToolsManager : MonoBehaviour
         //EnableTools(true);
         SetAnimating(false);
         //Debug.Log("GameBegin");
-        audioManager.PlayAudio(304, "对已选好的树木,在树干阴面进行标注（满足对蔽阴和光照的要求）");
+        audioManager.PlayAudio(3001, "对已选好的树木,在树干阴面进行标注（满足对蔽阴和光照的要求）");
     }
 
     void EnableTools(bool isEnable)

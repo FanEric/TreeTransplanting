@@ -18,6 +18,7 @@ public class QBJCheck : BaseStepDragCheck
         toolsManager.SetAnimating(true);
         yield return new WaitForSeconds(cClip.length);
         toolsManager.SetAnimating(false);
+
     }
 
     public override bool CheckStep()

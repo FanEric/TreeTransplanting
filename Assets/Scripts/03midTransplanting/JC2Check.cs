@@ -23,6 +23,7 @@ public class JC2Check : BaseStepDragCheck {
 
         kMark.SetActive(true);
         toolsManager.ShowQuestion();
+
     }
 
     public override bool CheckStep()
@@ -41,6 +42,7 @@ public class JC2Check : BaseStepDragCheck {
     {
         kAnim.transform.parent.gameObject.SetActive(false);
         kNext.SetActive(true);
+        audioManager.PlayAudio(3006, "根据之前确定的土球直径，按其半径（半径为105）确定4个点，并连成圆圈");
     }
 }
 

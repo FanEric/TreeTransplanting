@@ -19,7 +19,7 @@ public class HuaYuanCheck : BaseStepCheck
             yield return new WaitForSeconds(cClip.length);
             toolsManager.SetAnimating(false);
 
-            audioManager.PlayAudio(305, "移植前1-2天，根据土壤干湿情况进行适当浇水");
+            audioManager.PlayAudio(3002, "移植前1-2天，根据土壤干湿情况进行适当浇水");
         }
     }
 }

@@ -34,6 +34,7 @@ public class LoginManager : MonoBehaviour {
 
         kNameHint.SetActive(false);
         kClassHint.SetActive(false);
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     void HideNameHintOnChange(string str)

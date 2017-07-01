@@ -54,7 +54,7 @@ public class SystemSettings : MonoBehaviour{
 
     void OnBack()
     {
-		GameInfo.Reset ();
+        GameInfo.Reset ();
         SceneManager.LoadScene(0);
         Destroy(gameObject);
     }

@@ -782,20 +782,9 @@ MonoBehaviour:
   eventSystem: {fileID: 994121549}
   questionModule: {fileID: 936879085}
   toolsContainer: {fileID: 1028543820}
-  kAnimBJ: {fileID: 1533709915}
-  kAnimMSHQ: {fileID: 1533709913}
-  kAnimMSZS: {fileID: 1533709912}
   audioManager: {fileID: 1949703159}
   scoreManager: {fileID: 1657570820}
-  kCursorMS1: {fileID: 2800000, guid: c01beb62fbc414fef890910a0c6b9ec2, type: 3}
-  kCursorMS2: {fileID: 2800000, guid: 5ff49d75fa41a420ba12447013696b26, type: 3}
-  kCursorST: {fileID: 2800000, guid: 3174ef10189e7ed4594d72a397943c54, type: 3}
-  kCursorJD: {fileID: 2800000, guid: b0e8d6e3594a36b4f83dddd97c0cc8a6, type: 3}
-  kCursorTQ: {fileID: 2800000, guid: fe3a2870b5ccbb64a9a8010ad6a9eed4, type: 3}
-  kColliderSZ: {fileID: 1383201203}
-  kColliderXJSZ: {fileID: 1183291738}
   kCursorCur: {fileID: 0}
-  kYQT: {fileID: 1533709914}
 --- !u!1 &729898853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2461,26 +2450,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000011847549128, guid: ca8a44f20941cba4fb825eff39ec512a,
     type: 2}
   m_PrefabInternal: {fileID: 2075973600}
---- !u!95 &1533709912 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95000013252629796, guid: 7befcd0f74daaee41aa8fd1453b569e9,
-    type: 2}
-  m_PrefabInternal: {fileID: 972592207}
---- !u!95 &1533709913 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95000011155027186, guid: 7befcd0f74daaee41aa8fd1453b569e9,
-    type: 2}
-  m_PrefabInternal: {fileID: 972592207}
---- !u!1 &1533709914 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010193163952, guid: 7befcd0f74daaee41aa8fd1453b569e9,
-    type: 2}
-  m_PrefabInternal: {fileID: 972592207}
---- !u!95 &1533709915 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95000010964532502, guid: 7befcd0f74daaee41aa8fd1453b569e9,
-    type: 2}
-  m_PrefabInternal: {fileID: 972592207}
 --- !u!1001 &1657570819
 Prefab:
   m_ObjectHideFlags: 0
@@ -3159,7 +3128,7 @@ Prefab:
         type: 2}
       propertyPath: ac304
       value: 
-      objectReference: {fileID: 8300000, guid: cc02cb8e172e0384383e7b77e6a16410, type: 3}
+      objectReference: {fileID: 8300000, guid: 295a7984c76edc44e89fe9026a0e6556, type: 3}
     - target: {fileID: 114000011738481512, guid: 53a3ef71359060c43b1fc064b2cd2d0d,
         type: 2}
       propertyPath: ac201
@@ -3179,12 +3148,32 @@ Prefab:
         type: 2}
       propertyPath: ac305
       value: 
-      objectReference: {fileID: 8300000, guid: a2933d3b9bac41f4b9bc6f9f7a587b62, type: 3}
+      objectReference: {fileID: 8300000, guid: e9a7efb416bbb99488681e2770848121, type: 3}
     - target: {fileID: 82000010744052730, guid: 53a3ef71359060c43b1fc064b2cd2d0d,
         type: 2}
       propertyPath: m_Volume
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011738481512, guid: 53a3ef71359060c43b1fc064b2cd2d0d,
+        type: 2}
+      propertyPath: ac301
+      value: 
+      objectReference: {fileID: 8300000, guid: cc02cb8e172e0384383e7b77e6a16410, type: 3}
+    - target: {fileID: 114000011738481512, guid: 53a3ef71359060c43b1fc064b2cd2d0d,
+        type: 2}
+      propertyPath: ac302
+      value: 
+      objectReference: {fileID: 8300000, guid: a2933d3b9bac41f4b9bc6f9f7a587b62, type: 3}
+    - target: {fileID: 114000011738481512, guid: 53a3ef71359060c43b1fc064b2cd2d0d,
+        type: 2}
+      propertyPath: ac303
+      value: 
+      objectReference: {fileID: 8300000, guid: cd72db5b6c8102644aad474a69da0997, type: 3}
+    - target: {fileID: 114000011738481512, guid: 53a3ef71359060c43b1fc064b2cd2d0d,
+        type: 2}
+      propertyPath: ac306
+      value: 
+      objectReference: {fileID: 8300000, guid: 0bed144fa42f33f4c8ef54798baaa5eb, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53a3ef71359060c43b1fc064b2cd2d0d, type: 2}
   m_IsPrefabParent: 0

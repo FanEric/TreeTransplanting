@@ -9,8 +9,12 @@ public class AudioManager : MonoBehaviour {
     public AudioClip ac201;
     public AudioClip ac202;
     public AudioClip ac203;
+    public AudioClip ac301;
+    public AudioClip ac302;
+    public AudioClip ac303;
     public AudioClip ac304;
     public AudioClip ac305;
+    public AudioClip ac306;
 
     public AudioSource source;
     // Use this for initialization
@@ -41,13 +45,26 @@ public class AudioManager : MonoBehaviour {
             case 203:
                 source.clip = ac203;
                 break;
-            case 304:
+            case 3001:
+                source.clip = ac301;
+                break;
+            case 3002:
+                source.clip = ac302;
+                break;
+            case 3003:
+                source.clip = ac303;
+                break;
+            case 3004:
                 source.clip = ac304;
                 break;
-            case 305:
+            case 3005:
                 source.clip = ac305;
                 break;
+            case 3006:
+                source.clip = ac306;
+                break;
             default:
+                source.clip = null;
                 break;
         }
         source.Play();

@@ -14,6 +14,7 @@ public class TQCheck : BaseStepDragCheck
         yield return new WaitForSeconds(cClip.length);
         toolsManager.SetAnimating(false);
 
+        audioManager.PlayAudio(3005, "根据树木胸径大小确定土球的直径（一般情况下土球直径为胸径的6-8倍）");
     }
 
     public override bool CheckStep()
