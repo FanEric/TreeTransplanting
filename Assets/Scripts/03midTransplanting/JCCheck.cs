@@ -21,6 +21,7 @@ public class JCCheck : BaseStepDragCheck {
         yield return new WaitForSeconds(2f);
         //yield return new WaitForSeconds(cClip.length);
         toolsManager.SetAnimating(false);
+        HideAll(kAnim.transform);
         kMark.SetActive(true);
         kJT2.SetActive(true);
         kJC2.SetActive(true);

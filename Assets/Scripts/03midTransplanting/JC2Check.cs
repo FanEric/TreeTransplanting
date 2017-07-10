@@ -20,6 +20,7 @@ public class JC2Check : BaseStepDragCheck {
         yield return new WaitForSeconds(1.5f);
         //yield return new WaitForSeconds(cClip.length);
         toolsManager.SetAnimating(false);
+        HideAll(kAnim.transform);
 
         kMark.SetActive(true);
         toolsManager.ShowQuestion();

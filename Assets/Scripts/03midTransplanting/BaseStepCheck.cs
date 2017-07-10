@@ -19,6 +19,15 @@ public class BaseStepCheck : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
         yield return 0;
     }
 
+    public void HideAll(Transform hideParent)
+    {
+        MeshRenderer[] mrs = hideParent.GetComponentsInChildren<MeshRenderer>();
+        for (int i = 0; i < mrs.Length; i++)
+        {
+            mrs[i].enabled = false;
+        }
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
         StartCoroutine(DoStep());
@@ -33,5 +42,6 @@ public class BaseStepCheck : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
     {
         GetComponent<MeshRenderer>().enabled = false;
     }
+
 }
 

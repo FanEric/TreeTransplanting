@@ -17,6 +17,7 @@ public class YQTCheck : BaseStepCheck
             toolsManager.SetAnimating(true);
             yield return new WaitForSeconds(cClip.length);
             toolsManager.SetAnimating(false);
+            HideAll(transform.parent);
 
             toolsManager.kCursorCur = kCursor;
         }

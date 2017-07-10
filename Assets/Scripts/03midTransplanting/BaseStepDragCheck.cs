@@ -22,6 +22,15 @@ public class BaseStepDragCheck : MonoBehaviour, IDragHandler, IBeginDragHandler
         yield return 0;
     }
 
+    public void HideAll(Transform hideParent)
+    {
+        MeshRenderer[] mrs = hideParent.GetComponentsInChildren<MeshRenderer>();
+        for (int i = 0; i < mrs.Length; i++)
+        {
+            mrs[i].enabled = false;
+        }
+    }
+
     public void OnDrag(PointerEventData eventData)
     {
         if (doneStep)
