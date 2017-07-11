@@ -109,6 +109,18 @@ public class ToolsManager : MonoBehaviour
         }
     }
 
+    public bool CheckUIStep(int s)
+    {
+        if (s == step)
+            return true;
+        return false;
+    }
+
+    public int GetCurrentStep()
+    {
+        return step;
+    }
+
     public void SetAnimating(bool isAnim)
     {
         isAnimating = isAnim;

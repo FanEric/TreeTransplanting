@@ -22,13 +22,18 @@ public class BaseStepDragCheck : MonoBehaviour, IDragHandler, IBeginDragHandler
         yield return 0;
     }
 
+    /// <summary>
+    /// 动画播放完毕之后隐藏
+    /// 摒弃不用，改为点击别的工具的时候隐藏
+    /// </summary>
+    /// <param name="hideParent"></param>
     public void HideAll(Transform hideParent)
     {
-        MeshRenderer[] mrs = hideParent.GetComponentsInChildren<MeshRenderer>();
-        for (int i = 0; i < mrs.Length; i++)
-        {
-            mrs[i].enabled = false;
-        }
+        //MeshRenderer[] mrs = hideParent.GetComponentsInChildren<MeshRenderer>();
+        //for (int i = 0; i < mrs.Length; i++)
+        //{
+        //    mrs[i].enabled = false;
+        //}
     }
 
     public void OnDrag(PointerEventData eventData)
