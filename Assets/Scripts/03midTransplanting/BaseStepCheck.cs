@@ -33,6 +33,19 @@ public class BaseStepCheck : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
         //}
     }
 
+    void OnEnable()
+    {
+        if (GameInfo.gameMode == GameMode.PRECTICE)
+            GetComponent<MeshRenderer>().enabled = true;
+    }
+
+    public void GeneralOperOnCheckRight()
+    {
+        GetComponent<Collider>().enabled = false;
+        if (GameInfo.gameMode == GameMode.PRECTICE)
+            GetComponent<MeshRenderer>().enabled = false;
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
         StartCoroutine(DoStep());
@@ -40,12 +53,18 @@ public class BaseStepCheck : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        GetComponent<MeshRenderer>().enabled = true; 
+        if (GameInfo.gameMode == GameMode.TEST)
+        {
+            GetComponent<MeshRenderer>().enabled = true; 
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        GetComponent<MeshRenderer>().enabled = false;
+        if (GameInfo.gameMode == GameMode.TEST)
+        {
+            GetComponent<MeshRenderer>().enabled = false;
+        }
     }
 
 }

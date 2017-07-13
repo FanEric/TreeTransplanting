@@ -9,7 +9,7 @@ public class ShuiTongCheck : BaseStepCheck
     {
         if (toolsManager.CheckStep(3))
         {
-            GetComponent<Collider>().enabled = false;
+            base.GeneralOperOnCheckRight();
             kST.SetActive(true);
 
             AnimationClip cClip = kST.GetComponent<Animator>().runtimeAnimatorController.animationClips[0];

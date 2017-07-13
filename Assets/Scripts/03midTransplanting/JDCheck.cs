@@ -12,7 +12,7 @@ public class JDCheck : BaseStepCheck
     {
         if (toolsManager.CheckStep(4))
         {
-            GetComponent<Collider>().enabled = false;
+            base.GeneralOperOnCheckRight();
             kAnim.enabled = true;
 
             AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];

@@ -10,7 +10,7 @@ public class HuaYuanCheck : BaseStepCheck
     {
         if (toolsManager.CheckStep(2))
         {
-            GetComponent<Collider>().enabled = false;
+            base.GeneralOperOnCheckRight();
             kAnimBJ.enabled = true;
             kAnimMSHQ.enabled = true;
 

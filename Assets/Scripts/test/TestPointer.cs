@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using System;
 
+public delegate void TestDele();
+
 public class TestPointer : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
 

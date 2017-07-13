@@ -10,7 +10,7 @@ public class YQTCheck : BaseStepCheck
     {
         if (toolsManager.CheckStep(1))
         {
-            GetComponent<Collider>().enabled = false;
+            base.GeneralOperOnCheckRight();
             kAnim.enabled = true;
 
             AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
