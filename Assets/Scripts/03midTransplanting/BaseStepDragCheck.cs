@@ -17,6 +17,12 @@ public class BaseStepDragCheck : MonoBehaviour, IDragHandler, IBeginDragHandler
         audioManager = GameObject.FindObjectOfType<AudioManager>();
     }
 
+    void OnEnable()
+    {
+        if (GameInfo.gameMode == GameMode.TEST)
+            GetComponent<Renderer>().material.SetFloat("_Speed", 0f);
+    }
+
     public virtual IEnumerator DoStep()
     {
         yield return 0;
