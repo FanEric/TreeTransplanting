@@ -27,7 +27,7 @@ public class ToolsManager : MonoBehaviour
 	private Vector2 hotSpot = new Vector2(32, 32);
 
     private int step = 1;
-    Toggle[] btnTools;
+    Button[] btnTools;
 
     private int cQuestionId = 305;
     //是否正在播放动画，如果是，则不能选择别的工具
@@ -39,14 +39,13 @@ public class ToolsManager : MonoBehaviour
         kBeginObj.GetComponentInChildren<Button>().onClick.AddListener(OnBegin);
         InitQuestionModule();
 
-        btnTools = toolsContainer.GetComponentsInChildren<Toggle>();
+        btnTools = toolsContainer.GetComponentsInChildren<Button>();
         //EnableTools(false);
         SetAnimating(true);
     }
     void OnBegin()
     {
         kBeginObj.SetActive(false);
-        //EnableTools(true);
         SetAnimating(false);
         //Debug.Log("GameBegin");
         audioManager.PlayAudio(3001, "对已选好的树木,在树干阴面进行标注（满足对蔽阴和光照的要求）");
@@ -119,13 +118,6 @@ public class ToolsManager : MonoBehaviour
         }
     }
 
-    public bool CheckUIStep(int s)
-    {
-        if (s == step)
-            return true;
-        return false;
-    }
-
     public int GetCurrentStep()
     {
         return step;
@@ -163,15 +155,6 @@ public class ToolsManager : MonoBehaviour
         //Debug.Log(list.Count);
         return list.Count > 0;
     }
-
-//    void Update()
-//    {
-//        if (_selectedTool != null)
-//        {
-//			_selectedTool.position = new Vector3(Input.mousePosition.x - Screen.width / 2f, Input.mousePosition.y - Screen.height / 2);
-////            _selectedTool.position = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0, 0, 10));
-//        }
-//    }
 
 }
 

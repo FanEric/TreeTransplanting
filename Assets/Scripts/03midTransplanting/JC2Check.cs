@@ -7,7 +7,7 @@ using System.Collections;
 public class JC2Check : BaseStepDragCheck {
     public Animator kAnim;
     public GameObject kMark;
-    public GameObject kNext;
+    //public GameObject kNext;
 
     public override IEnumerator DoStep()
     {
@@ -41,8 +41,8 @@ public class JC2Check : BaseStepDragCheck {
 
     public void GotoNextStep()
     {
-        kAnim.transform.parent.gameObject.SetActive(false);
-        kNext.SetActive(true);
+        //kAnim.transform.parent.gameObject.SetActive(false);
+        //kNext.SetActive(true);
         audioManager.PlayAudio(3006, "根据之前确定的土球直径，按其半径（半径为105）确定4个点，并连成圆圈");
     }
 }

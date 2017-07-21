@@ -11,7 +11,6 @@ public class TransitionTool : MonoBehaviour {
     public static TransitionTool Instance;
     private Image kMask;
 
-
     void Awake()
     {
         Instance = this;
@@ -25,7 +24,7 @@ public class TransitionTool : MonoBehaviour {
     public void BeginTransition()
     {
         gameObject.SetActive(true);
-        kMask.DOFade(1f, 2f).OnComplete(FadeOut);
+        kMask.DOFade(1f, 1.5f).OnComplete(FadeOut);
     }
 
     void FadeOut()
@@ -33,7 +32,7 @@ public class TransitionTool : MonoBehaviour {
         if (maskingEvent != null)
             maskingEvent();
 
-        kMask.DOFade(0f, 2f).OnComplete(OnMaskOver);
+        kMask.DOFade(0f, 1.5f).OnComplete(OnMaskOver);
     }
 
     void OnMaskOver()
