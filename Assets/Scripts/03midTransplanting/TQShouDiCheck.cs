@@ -2,9 +2,9 @@
 using System.Collections;
 
 /// <summary>
-/// 铁锹挖沟
+/// 铁锹收底
 /// </summary>
-public class TQWaGouCheck : BaseStepDragCheck
+public class TQShouDiCheck : BaseStepDragCheck
 {
     public Animator kAnim;
     public GameObject[] kClays;
@@ -52,24 +52,25 @@ public class TQWaGouCheck : BaseStepDragCheck
 
     void OnDestroy()
     {
-        
+       
     }
 
     public override bool CheckStep()
     {
-        return toolsManager.CheckStep(8);
+        return toolsManager.CheckStep(10);
+        //return true;
     }
 
     public override bool CheckDistance()
     {
-        if (transform.localPosition.z > 0.450f)
+        if (transform.localPosition.y < 0.8f)
             return true;
         return false;
     }
 
     public void GotoNextStep()
     {
-        audioManager.PlayAudio(3008, "在球面下四分之一高度处用草绳水平进行包扎10-15圈，约20-25公分宽");
+        audioManager.PlayAudio(3010, "将土球从上到下修整成上大下小圆滑的球状");
     }
 }
 

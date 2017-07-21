@@ -87,15 +87,23 @@ public class ToolsManager : MonoBehaviour
             cQuestionId = 3071;
             questionModule.Show(false);
             GameObject.FindObjectOfType<JC2Check>().GotoNextStep();
-        }else if (cQuestionId == 3071)
+        }
+        else if (cQuestionId == 3071)
         {
             cQuestionId = 3072;
             ShowQuestion();
-        }else if (cQuestionId == 3072)
+        }
+        else if (cQuestionId == 3072)
         {
             cQuestionId = 309;
             questionModule.Show(false);
             GameObject.FindObjectOfType<TQWaGouCheck>().GotoNextStep();
+        }
+        else if (cQuestionId == 309)
+        {
+            cQuestionId = 315;
+            questionModule.Show(false);
+            GameObject.FindObjectOfType<TQShouDiCheck>().GotoNextStep();
         }
     }
 
