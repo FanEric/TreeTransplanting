@@ -74,7 +74,6 @@ public class BaseStepDragCheck : MonoBehaviour, IDragHandler, IBeginDragHandler
         if (CheckStep())
         {
             doneStep = true;
-
         }
     }
 }

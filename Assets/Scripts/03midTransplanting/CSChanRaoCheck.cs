@@ -1,31 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TQCheck : BaseStepDragCheck
+/// <summary>
+/// 打内腰箍
+/// </summary>
+public class CSChanRaoCheck : BaseStepDragCheck
 {
     public Animator kAnim;
+
+
     public override IEnumerator DoStep()
     {
         GetComponent<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
         kAnim.enabled = true;
+        kAnim.GetComponent<MeshRenderer>().enabled = true;
         AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
         toolsManager.SetAnimating(true);
         yield return new WaitForSeconds(cClip.length);
         toolsManager.SetAnimating(false);
         HideAll(kAnim.transform);
 
-        audioManager.PlayAudio(3005, "根据树木胸径大小确定土球的直径（一般情况下土球直径为胸径的6-8倍）");
+        audioManager.PlayAudio(3009, "挖掘到土球的2/3时，收底，底部直径为顶部直径的1/3");
     }
 
     public override bool CheckStep()
     {
-        return toolsManager.CheckStep(5);
+        return toolsManager.CheckStep(9);
+        //return true;
     }
 
     public override bool CheckDistance()
     {
-        if (transform.localPosition.x > 0.400f)
+        if (transform.localPosition.z < 0f)
             return true;
         return false;
     }

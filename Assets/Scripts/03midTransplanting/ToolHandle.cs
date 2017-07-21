@@ -10,6 +10,7 @@ public class ToolHandle : MonoBehaviour {
 
     private CursorMode cursorMode = CursorMode.Auto;
     private Vector2 hotSpot = new Vector2(32, 32);
+    private GameObject kDM_A;
 
     ToolsManager toolManager;
     // Use this for initialization
@@ -21,7 +22,8 @@ public class ToolHandle : MonoBehaviour {
     // Use this for initialization
     void Start () {
         GetComponent<Toggle>().onValueChanged.AddListener(OnToolChange);
-	}
+        kDM_A = GameObject.Find("DM_A");
+    }
 
     void OnToolChange(bool isOn)
     {
@@ -43,17 +45,51 @@ public class ToolHandle : MonoBehaviour {
                     break;
                 }
             }
+            //7-10需要隐藏kDM_A
+            if (steps[controledIndex] > 7 && toolManager.GetCurrentStep() <= steps[controledIndex])
+            {
+                kDM_A.SetActive(false);
+            }
+            else
+            {
+                kDM_A.SetActive(true);
+            }
         }
         else
         {
-            //TODO 如果kControledObjs有两个，当操作到第二个的时候隐藏的是第一个
-            //解决办法：将kControledObjs[controledIndex]改为kControledObjs[toolManager.GetCurrentStep()]
             Animator[] anims = kControledObjs[controledIndex].GetComponentsInChildren<Animator>();
             for (int i = 0; i < anims.Length; i++)
             {
                 anims[i].enabled = false;
             }
-            kControledObjs[controledIndex].SetActive(false);
+            Debug.Log("toolManager.GetCurrentStep(): " + toolManager.GetCurrentStep());
+            Debug.Log("steps[controledIndex]: " + steps[controledIndex]);
+            if (toolManager.GetCurrentStep() <= steps[controledIndex])
+            {
+                kControledObjs[controledIndex].SetActive(false);
+            }
+
+            for (int i = steps.Length; i > 0; i--)
+            {
+                //如果当前工具对应的最大步骤已经操作过了，则隐藏对应的物体
+                //主要解决kControledObjs有两个，当操作到第二个的时候隐藏的是第一个的问题
+                //if (toolManager.GetCurrentStep() >= steps[i - 1])
+                //{
+                //    kControledObjs[i - 1].SetActive(false);
+                //    break;
+                //}
+                //else
+                //{
+                //    kControledObjs[i - 1].SetActive(false);
+                //}
+
+                //尝试下将所有的物体都隐藏
+                //kControledObjs[i - 1].SetActive(false);
+
+            }
+
+            //Debug.Log("controledIndex: " + controledIndex);
+            //kControledObjs[controledIndex].SetActive(false);
         }
 
         //if (isOn)

@@ -82,12 +82,22 @@ public class ToolsManager : MonoBehaviour
 
     private void DoQuestionOver()
     {
+        //实在没有更好的处理办法了
         if (cQuestionId == 305)
         {
             cQuestionId = 3071;
+            questionModule.Show(false);
             GameObject.FindObjectOfType<JC2Check>().GotoNextStep();
+        }else if (cQuestionId == 3071)
+        {
+            cQuestionId = 3072;
+            ShowQuestion();
+        }else if (cQuestionId == 3072)
+        {
+            cQuestionId = 309;
+            questionModule.Show(false);
+            GameObject.FindObjectOfType<TQWaGouCheck>().GotoNextStep();
         }
-        questionModule.Show(false);
     }
 
     public bool CheckStep(int s)

@@ -34,7 +34,7 @@ public class JC2Check : BaseStepDragCheck {
 
     public override bool CheckDistance()
     {
-        if (transform.localPosition.x > 0.512f)
+        if (transform.localPosition.x > 0.430f)
             return true;
         return false;
     }
