@@ -5,7 +5,7 @@ public class RotateObj : MonoBehaviour
 {
     float x, y;
     public float rotateSpeed = 30f;
-    Vector3 center = new Vector3(0, 1.5f, 0);
+    public Vector3 center = new Vector3(0, 1.5f, 0);
     public float yMin = -15f;
     public float yMax = 30f;
     public float scrollSpeed = 12f;
