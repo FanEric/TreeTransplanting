@@ -2,7 +2,7 @@
 using System.Collections;
 
 /// <summary>
-/// 拖动铁锹到球的上部
+/// 10、拖动铁锹到球的上部
 /// </summary>
 public class TQYuanHuaCheck : BaseStepDragCheck
 {
@@ -46,6 +46,7 @@ public class TQYuanHuaCheck : BaseStepDragCheck
         {
             TransitionTool.Instance.maskingEvent -= OnMasking;
             TransitionTool.Instance.maskingOverEvent -= OnMaskingOver;
+            GotoNextStep();
         }
     }
 
@@ -57,20 +58,18 @@ public class TQYuanHuaCheck : BaseStepDragCheck
     public override bool CheckStep()
     {
         return toolsManager.CheckStep(11);
-        //return true;
     }
 
     public override bool CheckDistance()
     {
-        if (transform.localPosition.y < 0.8f)
+        if (transform.localPosition.y < 0.9f)
             return true;
         return false;
     }
 
     public void GotoNextStep()
     {
-        //audioManager.PlayAudio(3010, "将土球从上到下修整成上大下小圆滑的球状");
-        //audioManager.PlayAudio(3012, "将草绳一端固定在树干上，从上到下倾斜缠绕；第二层与第一层交叉压花缠绕");
+        audioManager.PlayAudio(3011, "将草绳一端固定在树干上，从上到下倾斜缠绕；第二层与第一层交叉压花缠绕");
     }
 }
 

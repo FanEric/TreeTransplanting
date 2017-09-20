@@ -30,7 +30,7 @@ public class QBJCheck : BaseStepDragCheck
 
     public override bool CheckDistance()
     {
-        if (transform.localPosition.x < 0.549f)
+        if (transform.localPosition.x < 0.58f)
             return true;
         return false;
     }

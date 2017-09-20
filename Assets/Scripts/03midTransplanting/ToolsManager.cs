@@ -109,10 +109,11 @@ public class ToolsManager : MonoBehaviour
 
     public bool CheckStep(int s)
     {
+        Debug.Log("s:step--> " + s + "--" + step);
         if (s == step)
         {
             step++;
-            Debug.Log("OK");
+            //Debug.Log("OK");
             return true;
         }
         else

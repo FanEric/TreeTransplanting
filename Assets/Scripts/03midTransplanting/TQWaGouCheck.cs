@@ -62,7 +62,7 @@ public class TQWaGouCheck : BaseStepDragCheck
 
     public override bool CheckDistance()
     {
-        if (transform.localPosition.z > 0.450f)
+        if (transform.localPosition.z > 0.35f)
             return true;
         return false;
     }

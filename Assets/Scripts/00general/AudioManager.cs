@@ -19,6 +19,16 @@ public class AudioManager : MonoBehaviour {
     public AudioClip ac308;
     public AudioClip ac309;
     public AudioClip ac310;
+    public AudioClip ac311;
+    public AudioClip ac312;
+    public AudioClip ac313;
+    public AudioClip ac314;
+    public AudioClip ac315;
+    public AudioClip ac316;
+    public AudioClip ac317;
+    public AudioClip ac318;
+    public AudioClip ac319;
+    public AudioClip ac320;
 
     public AudioSource source;
     // Use this for initialization
@@ -78,6 +88,36 @@ public class AudioManager : MonoBehaviour {
                 break;
             case 3010:
                 source.clip = ac310;
+                break;
+            case 3011:
+                source.clip = ac311;
+                break;
+            case 3012:
+                source.clip = ac312;
+                break;
+            case 3013:
+                source.clip = ac313;
+                break;
+            case 3014:
+                source.clip = ac314;
+                break;
+            case 3015:
+                source.clip = ac315;
+                break;
+            case 3016:
+                source.clip = ac316;
+                break;
+            case 3017:
+                source.clip = ac317;
+                break;
+            case 3018:
+                source.clip = ac318;
+                break;
+            case 3019:
+                source.clip = ac319;
+                break;
+            case 3020:
+                source.clip = ac320;
                 break;
             default:
                 source.clip = null;
