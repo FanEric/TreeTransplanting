@@ -42,7 +42,7 @@ public class CSZhongJianCheck : BaseStepDragCheck
 
     public override bool CheckDistance()
     {
-        if (transform.localPosition.z > 0.232f)
+        if (transform.localPosition.z > 0.222f)
             return true;
         return false;
     }

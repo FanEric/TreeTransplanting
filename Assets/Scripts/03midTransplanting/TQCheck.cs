@@ -25,7 +25,7 @@ public class TQCheck : BaseStepDragCheck
 
     public override bool CheckDistance()
     {
-        if (transform.localPosition.x > 0.400f)
+        if (transform.localPosition.x > 0.300f)
             return true;
         return false;
     }

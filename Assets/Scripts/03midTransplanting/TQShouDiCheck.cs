@@ -63,7 +63,7 @@ public class TQShouDiCheck : BaseStepDragCheck
 
     public override bool CheckDistance()
     {
-        if (transform.localPosition.y < 0.8f)
+        if (transform.localPosition.y < 0.9f)
             return true;
         return false;
     }
