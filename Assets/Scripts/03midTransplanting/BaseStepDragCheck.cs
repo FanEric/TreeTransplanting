@@ -3,13 +3,14 @@ using System.Collections;
 using UnityEngine.EventSystems;
 using System;
 
-public class BaseStepDragCheck : MonoBehaviour, IDragHandler, IBeginDragHandler
+public class BaseStepDragCheck : MonoBehaviour, IDragHandler
+    //, IBeginDragHandler
 {
     protected ToolsManager toolsManager;
     protected AudioManager audioManager;
 
     private bool isDone = false;
-    private bool doneStep = false;
+    //private bool doneStep = false;
 
     void Awake()
     {
@@ -44,7 +45,7 @@ public class BaseStepDragCheck : MonoBehaviour, IDragHandler, IBeginDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (doneStep)
+        //if (doneStep)
         {
             if (!CheckDistance())
             {
@@ -58,10 +59,10 @@ public class BaseStepDragCheck : MonoBehaviour, IDragHandler, IBeginDragHandler
         }
     }
 
-    public virtual bool CheckStep()
-    {
-        return false;
-    }
+    //public virtual bool CheckStep()
+    //{
+    //    return false;
+    //}
 
 
     public virtual bool CheckDistance()
@@ -69,12 +70,12 @@ public class BaseStepDragCheck : MonoBehaviour, IDragHandler, IBeginDragHandler
         return false;
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        if (CheckStep())
-        {
-            doneStep = true;
-        }
-    }
+    //public void OnBeginDrag(PointerEventData eventData)
+    //{
+    //    if (CheckStep())
+    //    {
+    //        doneStep = true;
+    //    }
+    //}
 }
 

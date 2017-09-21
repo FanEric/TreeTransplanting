@@ -7,7 +7,7 @@ public class HuaFeiCheck : BaseStepCheck
 
     public override IEnumerator DoStep()
     {
-        if (toolsManager.CheckStep(16))
+        //if (toolsManager.CheckStep(16))
         {
             base.GeneralOperOnCheckRight();
             kST.SetActive(true);

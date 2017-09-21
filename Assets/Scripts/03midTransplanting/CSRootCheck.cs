@@ -31,10 +31,10 @@ public class CSRootCheck : BaseStepDragCheck
        
     }
 
-    public override bool CheckStep()
-    {
-        return toolsManager.CheckStep(14);
-    }
+    //public override bool CheckStep()
+    //{
+    //    return toolsManager.CheckStep(14);
+    //}
 
     public override bool CheckDistance()
     {

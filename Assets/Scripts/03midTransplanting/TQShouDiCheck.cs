@@ -55,11 +55,10 @@ public class TQShouDiCheck : BaseStepDragCheck
        
     }
 
-    public override bool CheckStep()
-    {
-        return toolsManager.CheckStep(10);
-        //return true;
-    }
+    //public override bool CheckStep()
+    //{
+    //    return toolsManager.CheckStep(10);
+    //}
 
     public override bool CheckDistance()
     {

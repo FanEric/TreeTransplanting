@@ -27,10 +27,10 @@ public class JCCheck : BaseStepDragCheck {
         kJC2.SetActive(true);
     }
 
-    public override bool CheckStep()
-    {
-        return toolsManager.CheckStep(6);
-    }
+    //public override bool CheckStep()
+    //{
+    //    return toolsManager.CheckStep(6);
+    //}
 
     public override bool CheckDistance()
     {

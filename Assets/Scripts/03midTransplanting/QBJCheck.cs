@@ -23,10 +23,10 @@ public class QBJCheck : BaseStepDragCheck
         audioManager.PlayAudio(3007, "沿着弧线的外沿，垂直挖掘，沟的宽度一般为30-50cm,深度（土球的高度）为土球直径的2/3");
     }
 
-    public override bool CheckStep()
-    {
-        return toolsManager.CheckStep(7);
-    }
+    //public override bool CheckStep()
+    //{
+    //    return toolsManager.CheckStep(7);
+    //}
 
     public override bool CheckDistance()
     {

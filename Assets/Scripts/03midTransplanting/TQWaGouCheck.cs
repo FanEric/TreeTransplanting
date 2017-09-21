@@ -55,10 +55,10 @@ public class TQWaGouCheck : BaseStepDragCheck
         
     }
 
-    public override bool CheckStep()
-    {
-        return toolsManager.CheckStep(8);
-    }
+    //public override bool CheckStep()
+    //{
+    //    return toolsManager.CheckStep(8);
+    //}
 
     public override bool CheckDistance()
     {

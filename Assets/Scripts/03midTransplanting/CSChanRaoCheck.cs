@@ -24,11 +24,10 @@ public class CSChanRaoCheck : BaseStepDragCheck
         audioManager.PlayAudio(3009, "挖掘到土球的2/3时，收底，底部直径为顶部直径的1/3");
     }
 
-    public override bool CheckStep()
-    {
-        return toolsManager.CheckStep(9);
-        //return true;
-    }
+    //public override bool CheckStep()
+    //{
+    //    return toolsManager.CheckStep(9);
+    //}
 
     public override bool CheckDistance()
     {

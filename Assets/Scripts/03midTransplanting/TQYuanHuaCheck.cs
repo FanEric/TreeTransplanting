@@ -55,10 +55,10 @@ public class TQYuanHuaCheck : BaseStepDragCheck
        
     }
 
-    public override bool CheckStep()
-    {
-        return toolsManager.CheckStep(11);
-    }
+    //public override bool CheckStep()
+    //{
+    //    return toolsManager.CheckStep(11);
+    //}
 
     public override bool CheckDistance()
     {

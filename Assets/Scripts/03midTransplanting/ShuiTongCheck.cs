@@ -7,7 +7,7 @@ public class ShuiTongCheck : BaseStepCheck
 
     public override IEnumerator DoStep()
     {
-        if (toolsManager.CheckStep(3))
+        //if (toolsManager.CheckStep(3))
         {
             base.GeneralOperOnCheckRight();
             kST.SetActive(true);

@@ -8,7 +8,7 @@ public class HuaYuanCheck : BaseStepCheck
 
     public override IEnumerator DoStep()
     {
-        if (toolsManager.CheckStep(2))
+        //if (toolsManager.CheckStep(2))
         {
             base.GeneralOperOnCheckRight();
             kAnimBJ.enabled = true;

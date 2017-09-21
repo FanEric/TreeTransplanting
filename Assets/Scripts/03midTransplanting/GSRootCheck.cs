@@ -7,7 +7,7 @@ public class GSRootCheck : BaseStepCheck
 
     public override IEnumerator DoStep()
     {
-        if (toolsManager.CheckStep(14))
+        //if (toolsManager.CheckStep(14))
         {
             base.GeneralOperOnCheckRight();
             kST.SetActive(true);

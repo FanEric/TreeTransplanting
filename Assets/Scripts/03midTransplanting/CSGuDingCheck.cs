@@ -31,10 +31,10 @@ public class CSGuDingCheck : BaseStepDragCheck
        
     }
 
-    public override bool CheckStep()
-    {
-        return toolsManager.CheckStep(12);
-    }
+    //public override bool CheckStep()
+    //{
+    //    return toolsManager.CheckStep(12);
+    //}
 
     public override bool CheckDistance()
     {

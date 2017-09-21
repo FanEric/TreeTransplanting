@@ -10,7 +10,7 @@ public class JDCheck : BaseStepCheck
 
     public override IEnumerator DoStep()
     {
-        if (toolsManager.CheckStep(4))
+        //if (toolsManager.CheckStep(4))
         {
             base.GeneralOperOnCheckRight();
             kAnim.enabled = true;

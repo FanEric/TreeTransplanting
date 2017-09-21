@@ -19,7 +19,7 @@ public class DiaoCheCheck : BaseStepCheck
 
     public override IEnumerator DoStep()
     {
-        if (toolsManager.CheckStep(15))
+        //if (toolsManager.CheckStep(15))
         {
             base.GeneralOperOnCheckRight();
             kDiaoChe.SetActive(true);

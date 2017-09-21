@@ -18,7 +18,7 @@ public class RuKengCheck : BaseStepCheck
 
     public override IEnumerator DoStep()
     {
-        if (toolsManager.CheckStep(17))
+        //if (toolsManager.CheckStep(17))
         {
             base.GeneralOperOnCheckRight();
             kDiaoche.SetActive(true);

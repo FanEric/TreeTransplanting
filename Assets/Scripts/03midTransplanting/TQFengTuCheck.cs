@@ -58,10 +58,10 @@ public class TQFengTuCheck : BaseStepDragCheck
         
     }
 
-    public override bool CheckStep()
-    {
-        return toolsManager.CheckStep(18);
-    }
+    //public override bool CheckStep()
+    //{
+    //    return toolsManager.CheckStep(18);
+    //}
 
     public override bool CheckDistance()
     {

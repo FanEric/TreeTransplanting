@@ -8,7 +8,7 @@ public class YQTCheck : BaseStepCheck
 
     public override IEnumerator DoStep()
     {
-        if (toolsManager.CheckStep(1))
+        //if (toolsManager.CheckStep(1))
         {
             base.GeneralOperOnCheckRight();
             kAnim.enabled = true;

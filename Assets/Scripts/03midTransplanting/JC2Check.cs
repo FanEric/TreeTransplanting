@@ -27,10 +27,10 @@ public class JC2Check : BaseStepDragCheck {
 
     }
 
-    public override bool CheckStep()
-    {
-        return true;
-    }
+    //public override bool CheckStep()
+    //{
+    //    return true;
+    //}
 
     public override bool CheckDistance()
     {

@@ -18,10 +18,10 @@ public class TQCheck : BaseStepDragCheck
         audioManager.PlayAudio(3005, "根据树木胸径大小确定土球的直径（一般情况下土球直径为胸径的6-8倍）");
     }
 
-    public override bool CheckStep()
-    {
-        return toolsManager.CheckStep(5);
-    }
+    //public override bool CheckStep()
+    //{
+    //    return toolsManager.CheckStep(5);
+    //}
 
     public override bool CheckDistance()
     {
