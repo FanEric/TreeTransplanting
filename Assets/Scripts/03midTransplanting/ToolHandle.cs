@@ -50,9 +50,13 @@ public class ToolHandle : MonoBehaviour {
             }
             controledIndex++;
         }
-        else
+        else    //操作步骤错误
         {
             toolManager.CheckStep(-1);
+            toolManager.kMotion.transform.SetParent(transform);
+            toolManager.kMotion.transform.localPosition = new Vector3(0, 200, 0);
+            toolManager.kMotion.Show();
+            toolManager.GetComponent<AudioSource>().Play();
         }
     }
 

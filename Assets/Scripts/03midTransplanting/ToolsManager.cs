@@ -13,6 +13,7 @@ public class ToolsManager : MonoBehaviour
 
     public QuestionModule questionModule;
 
+    public AutoHide kMotion;
     public Transform toolsContainer;
 
     public AudioManager audioManager;
@@ -119,10 +120,11 @@ public class ToolsManager : MonoBehaviour
         else
         {
             int score = 1;
-            if (step == 1 || step == 2)
+            if (step == 1 || step == 5 || step == 7 || step == 8 || step == 9 || step == 17 || step == 19)
                 score = 2;
             scoreManager.UpdateScore(score);
             Debug.Log("wrong");
+           
             return false;
         }
     }
