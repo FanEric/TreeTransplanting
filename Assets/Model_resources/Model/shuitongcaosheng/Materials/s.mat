@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Collider
-  m_Shader: {fileID: 4800000, guid: f01a551520f38e64489b190fde6281e0, type: 3}
+  m_Name: s
+  m_Shader: {fileID: 4800000, guid: 04e37afb91aaa044fa01a138b426fe8e, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -58,6 +58,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
+        name: _Noise
+      second:
+        m_Texture: {fileID: 2800000, guid: 5f89a54f3ff81e845b38d17495507182, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
         name: _OcclusionMap
       second:
         m_Texture: {fileID: 0}
@@ -69,10 +75,31 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - first:
+        name: _node_3339
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _node_3534
+      second:
+        m_Texture: {fileID: 2800000, guid: 5f89a54f3ff81e845b38d17495507182, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _node_947
+      second:
+        m_Texture: {fileID: 8900000, guid: b995d4bd9d11078d11005b9844295342, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
         name: _BumpScale
       second: 1
+    - first:
+        name: _Cut
+      second: 0
     - first:
         name: _Cutoff
       second: 0.5
@@ -81,6 +108,9 @@ Material:
       second: 1
     - first:
         name: _DstBlend
+      second: 0
+    - first:
+        name: _Gloss
       second: 0
     - first:
         name: _GlossMapScale
@@ -104,6 +134,9 @@ Material:
         name: _Parallax
       second: 0.02
     - first:
+        name: _Refraction
+      second: 0.35
+    - first:
         name: _SmoothnessTextureChannel
       second: 0
     - first:
@@ -111,7 +144,7 @@ Material:
       second: 1
     - first:
         name: _Speed
-      second: 1.5
+      second: -0.5
     - first:
         name: _SrcBlend
       second: 1
@@ -119,15 +152,30 @@ Material:
         name: _UVSec
       second: 0
     - first:
-        name: _VO
-      second: 0
-    - first:
         name: _ZWrite
       second: 1
+    - first:
+        name: _node_1533
+      second: -0.08
+    - first:
+        name: _node_3569
+      second: 0.322
+    - first:
+        name: _node_4507
+      second: 0.441
+    - first:
+        name: _node_5076
+      second: 0
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0, g: 1, b: 0, a: 1}
+      second: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+    - first:
+        name: _ColorAlpha
+      second: {r: 0.78676474, g: 0.78676474, b: 0.78676474, a: 0.141}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _node_6358
+      second: {r: 0.33823532, g: 0.33823532, b: 0.33823532, a: 0.172}
