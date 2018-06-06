@@ -17,8 +17,10 @@ public class SGJiaoShuiCheck : BaseStepCheck
             toolsManager.SetAnimating(true);
             yield return new WaitForSeconds(cClip.length);
             toolsManager.SetAnimating(false);
+            kAnimBJ.enabled = false;
 
-            //audioManager.PlayAudio(3002, "移植前1-2天，根据土壤干湿情况进行适当浇水");
+            toolsManager.ShowBeginAfter();
+            audioManager.PlayAudio(0, "");
         }
     }
 }

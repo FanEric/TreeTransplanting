@@ -14,6 +14,7 @@ public class CSZhongJianCheck : BaseStepDragCheck
 
     public override IEnumerator DoStep()
     {
+        //kAnim.gameObject.SetActive(true);
         GetComponent<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
         kAnim.enabled = true;

@@ -40,15 +40,14 @@ public class ToolHandle : MonoBehaviour {
             kControledObjs[controledIndex].SetActive(true);
             kLastScene = kControledObjs[controledIndex];
             //步骤7以后需要隐藏kDM_A
-            if (steps[controledIndex] >= 7)
+            if (kDM_A != null)
             {
-                kDM_A.SetActive(false);
+                if (steps[controledIndex] >= 7)
+                    kDM_A.SetActive(false);
+                else
+                    kDM_A.SetActive(true);
+                controledIndex++;
             }
-            else
-            {
-                kDM_A.SetActive(true);
-            }
-            controledIndex++;
         }
         else    //操作步骤错误
         {

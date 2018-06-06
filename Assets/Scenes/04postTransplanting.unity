@@ -270,6 +270,11 @@ MonoBehaviour:
   audioManager: {fileID: 1721540964}
   scoreManager: {fileID: 645641667}
   kCursorCur: {fileID: 0}
+  kRawImage: {fileID: 0}
+  kBeginBefore: {fileID: 0}
+  kBeginAfter: {fileID: 0}
+  kToolsContainerBefore: {fileID: 0}
+  kToolsContainerAfter: {fileID: 0}
 --- !u!4 &328111
 Transform:
   m_ObjectHideFlags: 0
@@ -17748,7 +17753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6352fc0704746cd4daf26f171aee1e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kCursor: {fileID: 2800000, guid: 3b0a0cba061474b4d8115bf27ff629d8, type: 3}
+  kCursor: {fileID: 2800000, guid: 4cde04d0051b659428b77142a003be05, type: 3}
   kControledObjs:
   - {fileID: 1812787875}
   steps: 13000000

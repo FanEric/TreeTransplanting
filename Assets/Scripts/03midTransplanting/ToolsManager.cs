@@ -22,9 +22,14 @@ public class ToolsManager : MonoBehaviour
     [HideInInspector]
     public Texture2D kCursorCur = null;
 
-    private GameObject kBeginObj;
+    public GameObject kRawImage;
+    public GameObject kBeginBefore;
+    public GameObject kBeginAfter;
+    public GameObject kToolsContainerBefore;
+    public GameObject kToolsContainerAfter;
 
-	private CursorMode cursorMode = CursorMode.Auto;
+
+    private CursorMode cursorMode = CursorMode.Auto;
 	private Vector2 hotSpot = new Vector2(32, 32);
 
     private int step = 1;
@@ -36,20 +41,39 @@ public class ToolsManager : MonoBehaviour
 
     void Start()
     {
-        kBeginObj = GameObject.Find("RawImage_bgBlur");
-        kBeginObj.GetComponentInChildren<Button>().onClick.AddListener(OnBegin);
+        kBeginBefore.GetComponent<Button>().onClick.AddListener(OnBeginBefore);
+        kBeginAfter.GetComponent<Button>().onClick.AddListener(OnBeginAfter);
         InitQuestionModule();
 
         btnTools = toolsContainer.GetComponentsInChildren<Button>();
         //EnableTools(false);
         SetAnimating(true);
     }
-    void OnBegin()
+    void OnBeginBefore()
     {
-        kBeginObj.SetActive(false);
+        kRawImage.SetActive(false);
+        kBeginBefore.SetActive(false);
         SetAnimating(false);
         //Debug.Log("GameBegin");
         audioManager.PlayAudio(3001, "对已选好的树木,在树干阴面进行标注（满足对蔽阴和光照的要求）");
+    }
+
+    public void ShowBeginAfter()
+    {
+        kRawImage.SetActive(true);
+        kBeginAfter.SetActive(true);
+
+        kToolsContainerBefore.SetActive(false);
+        kToolsContainerAfter.SetActive(true);
+    }
+
+    void OnBeginAfter()
+    {
+        kRawImage.SetActive(false);
+        kBeginAfter.SetActive(false);
+        SetAnimating(false);
+        //Debug.Log("GameBegin");
+        audioManager.PlayAudio(3019, "为防止水分蒸腾过大，需用草绳包裹从根部至离地2m左右的树干（对草绳浇水保持韧性，草绳间不留空隙）");
     }
 
     void EnableTools(bool isEnable)
@@ -141,7 +165,7 @@ public class ToolsManager : MonoBehaviour
 
     void Update()
 	{
-        EnableTools(!isAnimating);
+        //EnableTools(!isAnimating);
         SetCursor();
     }
 

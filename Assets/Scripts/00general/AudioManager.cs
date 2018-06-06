@@ -29,6 +29,9 @@ public class AudioManager : MonoBehaviour {
     public AudioClip ac318;
     public AudioClip ac319;
     public AudioClip ac320;
+    public AudioClip ac321;
+    public AudioClip ac322;
+    public AudioClip ac323;
 
     public AudioSource source;
     // Use this for initialization
@@ -119,11 +122,21 @@ public class AudioManager : MonoBehaviour {
             case 3020:
                 source.clip = ac320;
                 break;
+            case 3021:
+                source.clip = ac321;
+                break;
+            case 3022:
+                source.clip = ac322;
+                break;
+            case 3023:
+                source.clip = ac323;
+                break;
             default:
                 source.clip = null;
                 break;
         }
-        source.Play();
+        if(source.clip != null)
+            source.Play();
         kDubStr.text = dubStr;
     }
 
