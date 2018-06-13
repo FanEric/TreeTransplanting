@@ -23,7 +23,7 @@ public class CSGuDingCheck : BaseStepDragCheck
         toolsManager.SetAnimating(false);
         HideAll(kAnim.transform);
 
-        GotoNextStep();
+        audioManager.PlayAudio(3012, "在土球中间水平缠绕几道腰绳，与内腰箍同宽");
     }
 
     void OnDestroy()
@@ -43,9 +43,5 @@ public class CSGuDingCheck : BaseStepDragCheck
         return false;
     }
 
-    public void GotoNextStep()
-    {
-        audioManager.PlayAudio(3012, "在土球中间水平缠绕几道腰绳，与内腰箍同宽");
-    }
 }
 

@@ -32,7 +32,7 @@ public class ToolsManager : MonoBehaviour
     private CursorMode cursorMode = CursorMode.Auto;
 	private Vector2 hotSpot = new Vector2(32, 32);
 
-    private int step = 1;
+    public int step = 1;
     Button[] btnTools;
 
     private int cQuestionId = 305;

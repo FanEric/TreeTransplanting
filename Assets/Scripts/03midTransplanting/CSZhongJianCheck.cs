@@ -8,16 +8,13 @@ public class CSZhongJianCheck : BaseStepDragCheck
 {
     public Animator kAnim;
 
-    void Start()
-    {
-    }
-
     public override IEnumerator DoStep()
     {
         //kAnim.gameObject.SetActive(true);
         GetComponent<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
         kAnim.enabled = true;
+        kAnim.GetComponentInChildren<MeshRenderer>().enabled = true;
         AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
         toolsManager.SetAnimating(true);
         yield return new WaitForSeconds(cClip.length);
@@ -33,25 +30,12 @@ public class CSZhongJianCheck : BaseStepDragCheck
         audioManager.PlayAudio(3014, "用事先准备好的钢丝绳八字形兜底通过重心，在绳与泥球之间插木板，以防绳子嵌入土球而切断草绳，另一更麻绳系于主干分叉处使树梢倾斜在起吊钩上，并使树干小于45度");
     }
 
-    void OnDestroy()
-    {
-       
-    }
-
-    //public override bool CheckStep()
-    //{
-    //    return toolsManager.CheckStep(13);
-    //}
-
     public override bool CheckDistance()
     {
-        if (transform.localPosition.z > 0.222f)
+        if (transform.localPosition.z < -0.9f)
             return true;
         return false;
     }
 
-    public void GotoNextStep()
-    {
-    }
 }
 

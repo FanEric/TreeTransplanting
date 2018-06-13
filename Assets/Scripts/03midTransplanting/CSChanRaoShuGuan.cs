@@ -11,6 +11,7 @@ public class CSChanRaoShuGuan : BaseStepDragReverseCheck
         GetComponent<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
         kAnimBJ.enabled = true;
+        kAnimBJ.GetComponent<MeshRenderer>().enabled = true;
 
         AnimationClip cClip = kAnimBJ.runtimeAnimatorController.animationClips[0];
         toolsManager.SetAnimating(true);
