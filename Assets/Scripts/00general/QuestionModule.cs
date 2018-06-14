@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
 public delegate void QuestionOverHandle();
 
@@ -11,6 +12,8 @@ public class QuestionModule : MonoBehaviour
 	public Sprite kCry;
 	public AudioClip kRight;
 	public AudioClip kWrong;
+    public ScoreManager scoreManager;
+    public AudioManager audioManager;
 
     private Transform mTrans;
     private Text kQuestionName;
@@ -18,19 +21,11 @@ public class QuestionModule : MonoBehaviour
     private Button kSubmit;
     private Image kMotion;
 	private AudioSource kSource;
-    private AudioManager audioManager;
-    private ScoreManager scoreManager;
 
     private List<int> correctAnswer = new List<int>();
     private int cPoint = 0;
 
     public event QuestionOverHandle questionOverEvent;
-
-    void Awake()
-    {
-        audioManager = GameObject.FindObjectOfType<AudioManager>();
-        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
-    }
 
     public void Init()
     {
@@ -50,6 +45,7 @@ public class QuestionModule : MonoBehaviour
     public void Show(bool toShow)
     {
         gameObject.SetActive(toShow);
+        kSubmit.interactable = toShow;
     }
 
     public void RequestQuestion(int id)
@@ -103,27 +99,24 @@ public class QuestionModule : MonoBehaviour
 
         //跟正确答案对比，判断对错
         if (CheckUserAnswer(userAnswer))
-        {
-            DoAnswerRight();
-			Debug.Log("正确");
-           
-        }
+            StartCoroutine(DoAnswerRight());
         else
-        {
             DoAnswerWrong();
-            Debug.Log("错误");
-        }
-		kSource.Play ();
     }
 
-    void DoAnswerRight()
+    IEnumerator DoAnswerRight()
     {
-		kSource.clip = kRight;
+		Debug.Log("正确");
+        kSubmit.interactable = false;
+        kSource.clip = kRight;
+        kSource.Play();
         kMotion.gameObject.SetActive(true);
         kMotion.sprite = kSmile;
         kMotion.GetComponent<AutoHide>().Show();
+        yield return new WaitForSeconds(1f);
+        kMotion.gameObject.SetActive(false);
 
-		ResetToggles();
+        ResetToggles();
         audioManager.Clear();
 
         if (questionOverEvent != null)
@@ -132,8 +125,10 @@ public class QuestionModule : MonoBehaviour
 
     void DoAnswerWrong()
     {
-		kSource.clip = kWrong;
-		scoreManager.UpdateScore (cPoint);
+        Debug.Log("错误");
+        kSource.clip = kWrong;
+		kSource.Play ();
+		scoreManager.UpdateScore(cPoint);
         kMotion.gameObject.SetActive(true);
         kMotion.sprite = kCry;
         kMotion.GetComponent<AutoHide>().Show();
@@ -147,9 +142,7 @@ public class QuestionModule : MonoBehaviour
             for (int i = 0; i < correctAnswer.Count; i++)
             {
                 if (correctAnswer[i] != userAnswer[i])
-                {
                     return false;
-                }
             }
             return true;
         }

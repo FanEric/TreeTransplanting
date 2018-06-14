@@ -18,7 +18,7 @@ public class JCCheck : BaseStepDragCheck {
         kAnim.enabled = true;
         AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
         toolsManager.SetAnimating(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2f);//原动画的长度为4，但是中间有帧数是空，所以手动改为等待2秒
         //yield return new WaitForSeconds(cClip.length);
         toolsManager.SetAnimating(false);
         HideAll(kAnim.transform);
@@ -26,11 +26,6 @@ public class JCCheck : BaseStepDragCheck {
         kJT2.SetActive(true);
         kJC2.SetActive(true);
     }
-
-    //public override bool CheckStep()
-    //{
-    //    return toolsManager.CheckStep(6);
-    //}
 
     public override bool CheckDistance()
     {

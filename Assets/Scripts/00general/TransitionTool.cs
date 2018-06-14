@@ -29,10 +29,11 @@ public class TransitionTool : MonoBehaviour {
 
     void FadeOut()
     {
+        Debug.Log("FadeOut");
         if (maskingEvent != null)
             maskingEvent();
 
-        kMask.DOFade(0f, 1.5f).OnComplete(OnMaskOver);
+        kMask.DOFade(0f, 1f).OnComplete(OnMaskOver);
     }
 
     void OnMaskOver()

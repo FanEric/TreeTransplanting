@@ -15,7 +15,7 @@ public class ToolHandle : MonoBehaviour {
     // Use this for initialization
     void Awake()
     {
-        toolManager = GameObject.FindObjectOfType<ToolsManager>();
+        toolManager = FindObjectOfType<ToolsManager>();
     }
 
     // Use this for initialization
@@ -46,8 +46,8 @@ public class ToolHandle : MonoBehaviour {
                     kDM_A.SetActive(false);
                 else
                     kDM_A.SetActive(true);
-                controledIndex++;
             }
+            controledIndex++;
         }
         else    //操作步骤错误
         {
@@ -58,37 +58,5 @@ public class ToolHandle : MonoBehaviour {
             toolManager.GetComponent<AudioSource>().Play();
         }
     }
-
-    //void OnButton()
-    //{
-    //    toolManager.kCursorCur = kCursor;
-    //    //1、隐藏上一步骤
-    //    //如果点击的工具对应的步骤大于当前操作步骤的时候隐藏当上一步骤场景
-    //    //反之，则不做其他处理
-    //    int cStep = toolManager.GetCurrentStep();
-    //    //2、显示当前步骤
-    //    for (int i = controledIndex; i < steps.Length; i++)
-    //    {
-    //        if (cStep <= steps[i])
-    //        {
-    //            if (kLastScene != null)
-    //                kLastScene.SetActive(false);
-
-    //            controledIndex = i;
-    //            kControledObjs[controledIndex].SetActive(true);
-    //            kLastScene = kControledObjs[controledIndex];
-    //            break;
-    //        }
-    //    }
-    //    //7-10需要隐藏kDM_A
-    //    if (steps[controledIndex] > 7)
-    //    {
-    //        kDM_A.SetActive(false);
-    //    }
-    //    else
-    //    {
-    //        kDM_A.SetActive(true);
-    //    }
-    //}
 }
 

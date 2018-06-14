@@ -111,7 +111,7 @@ public class ToolsManager : MonoBehaviour
         {
             cQuestionId = 3071;
             questionModule.Show(false);
-            GameObject.FindObjectOfType<JC2Check>().GotoNextStep();
+            FindObjectOfType<JC2Check>().GotoNextStep();
         }
         else if (cQuestionId == 3071)
         {
@@ -122,13 +122,19 @@ public class ToolsManager : MonoBehaviour
         {
             cQuestionId = 309;
             questionModule.Show(false);
-            GameObject.FindObjectOfType<TQWaGouCheck>().GotoNextStep();
+            FindObjectOfType<TQWaGouCheck>().GotoNextStep();
         }
         else if (cQuestionId == 309)
         {
             cQuestionId = 315;
             questionModule.Show(false);
-            GameObject.FindObjectOfType<TQShouDiCheck>().GotoNextStep();
+            FindObjectOfType<TQShouDiCheck>().GotoNextStep();
+        }
+        else if (cQuestionId == 315)
+        {
+            cQuestionId = 0;
+            questionModule.Show(false);
+            TransitionTool.Instance.BeginTransition();
         }
     }
 
