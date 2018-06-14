@@ -45,7 +45,6 @@ public class QuestionModule : MonoBehaviour
     public void Show(bool toShow)
     {
         gameObject.SetActive(toShow);
-        kSubmit.interactable = toShow;
     }
 
     public void RequestQuestion(int id)
@@ -92,9 +91,7 @@ public class QuestionModule : MonoBehaviour
         {
             Toggle tog = kOptions[i];
             if (tog.IsActive() && tog.isOn)
-            {
                 userAnswer.Add(tog.transform.GetComponent<OptionState>().optionId);
-            }
         }
 
         //跟正确答案对比，判断对错
@@ -113,8 +110,9 @@ public class QuestionModule : MonoBehaviour
         kMotion.gameObject.SetActive(true);
         kMotion.sprite = kSmile;
         kMotion.GetComponent<AutoHide>().Show();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         kMotion.gameObject.SetActive(false);
+        kSubmit.interactable = true;
 
         ResetToggles();
         audioManager.Clear();
