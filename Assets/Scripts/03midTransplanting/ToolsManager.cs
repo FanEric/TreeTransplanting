@@ -171,7 +171,7 @@ public class ToolsManager : MonoBehaviour
 
     void Update()
 	{
-        EnableTools(!isAnimating);
+        //EnableTools(!isAnimating);
         SetCursor();
     }
 

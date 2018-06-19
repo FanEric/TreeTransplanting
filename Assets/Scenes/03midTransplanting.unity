@@ -5736,7 +5736,7 @@ GameObject:
   - 114: {fileID: 277268564}
   - 114: {fileID: 277268563}
   m_Layer: 5
-  m_Name: Button_Muban
+  m_Name: Button_MuKuang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5773,7 +5773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6352fc0704746cd4daf26f171aee1e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kCursor: {fileID: 2800000, guid: e4683897cca4c1048a1504fda5f89a10, type: 3}
+  kCursor: {fileID: 2800000, guid: 66fbe36981f012b469b966420248d7f1, type: 3}
   kControledObjs:
   - {fileID: 1120176215}
   steps: 15000000
@@ -5803,7 +5803,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 52541fd2d1116fd4780ce85147a35dc7,
+    m_HighlightedSprite: {fileID: 21300000, guid: 79b62a42f29c7934295e8e1f5dff5333,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -5839,7 +5839,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9bdde078edf28ed4386339668d1ff41e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd5131bb40feb654bba8d7bba59f4f24, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21676,6 +21676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kTarget: {fileID: 1559870145}
+  scoreManager: {fileID: 1657570820}
 --- !u!4 &1064104874 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000010042813356, guid: 684c5df0ae9610b4b97b7b91345c11d5,
@@ -34059,15 +34060,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000011623937082, guid: ba8f6eeec010a13479b4dc926498a955, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 223000010757641094, guid: ba8f6eeec010a13479b4dc926498a955,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba8f6eeec010a13479b4dc926498a955, type: 2}

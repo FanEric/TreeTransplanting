@@ -1,39 +1,63 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections;
 
 public class ScoreManager : MonoBehaviour {
 
     private static ScoreManager instance;
 
-    private Text kScore;
-	private Button kSubmit;
+    public GameObject kFinalTipTest;
+    public GameObject kFinalTipExam;
+    public Text kFinalScore;
+    public Text kScore;
+    public Button kSubmit;
 
     void Start()
     {
-		kScore = transform.FindChild("Image/Text_score").GetComponent<Text>();
-		kSubmit = transform.FindChild("Image/Button_submit").GetComponent<Button>();
 		kScore.text = GameInfo.gameScore.ToString();
-		kSubmit.onClick.AddListener (OnSubmit);
+		kSubmit.onClick.AddListener (OnExamModeOver);
 
 		kSubmit.interactable = false;
 
-		if (GameInfo.gameMode == GameMode.PRECTICE)
-			kScore.transform.root.gameObject.SetActive(false);
+        if (GameInfo.gameMode == GameMode.PRECTICE)
+            kSubmit.gameObject.SetActive(false);
     }
 
     public void UpdateScore(int point)
     {
-        if (GameInfo.gameMode == GameMode.PRECTICE)
-            kScore.transform.root.gameObject.SetActive(false);
-
 		GameInfo.gameScore -= point;
 		kScore.text = GameInfo.gameScore.ToString();
     }
 
-	void OnSubmit()
-	{
-		
-	}
+    void OnTestModeOver()
+    {
+        kFinalTipTest.SetActive(true);
+    }
+
+    void OnExamModeOver()
+    {
+        kFinalScore.text = GameInfo.gameScore.ToString();
+        kFinalTipExam.SetActive(true);
+    }
+
+    public void OnOK()
+    {
+        GameInfo.gameScore = 0;
+        kFinalScore.text = "100";
+        SceneManager.LoadScene(0);
+    }
+
+    public void OnGameOver()
+    {
+        if (GameInfo.gameMode == GameMode.PRECTICE)
+            OnTestModeOver();
+        else
+        {
+            kSubmit.interactable = true;
+            OnExamModeOver();
+        }
+    }
+
+
 }
 

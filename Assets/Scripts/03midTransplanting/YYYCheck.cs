@@ -5,6 +5,7 @@ using System.Collections;
 public class YYYCheck : BaseStepCheck
 {
     public GameObject kTarget;
+    public ScoreManager scoreManager;
 
     public override IEnumerator DoStep()
     {
@@ -15,8 +16,7 @@ public class YYYCheck : BaseStepCheck
         yield return new WaitForSeconds(2f);
         toolsManager.SetAnimating(false);
 
-        //audioManager.PlayAudio(3023, "注射营养液补充营养，0.05-0.1%的硫酸亚铁溶液稀释200-300倍");
-
+        scoreManager.OnGameOver();
     }
 }
 
