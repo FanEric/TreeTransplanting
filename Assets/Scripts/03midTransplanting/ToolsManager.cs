@@ -169,7 +169,7 @@ public class ToolsManager : MonoBehaviour
     void Update()
 	{
         //发布的时候一定要打开！！！
-        //EnableTools(!isAnimating);
+        EnableTools(!isAnimating);
         SetCursor();
     }
 

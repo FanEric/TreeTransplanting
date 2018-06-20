@@ -43,8 +43,10 @@ public class ScoreManager : MonoBehaviour {
     public void OnOK()
     {
         GameInfo.gameScore = 0;
-        kFinalScore.text = "100";
         SceneManager.LoadScene(0);
+        GameObject obj = GameObject.Find("TopRightCanvas");
+        if (obj != null)
+            Destroy(obj);
     }
 
     public void OnGameOver()
@@ -52,10 +54,7 @@ public class ScoreManager : MonoBehaviour {
         if (GameInfo.gameMode == GameMode.PRACTICE)
             OnTestModeOver();
         else
-        {
             kSubmit.interactable = true;
-            OnExamModeOver();
-        }
     }
 
 

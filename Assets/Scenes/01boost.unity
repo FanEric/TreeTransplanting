@@ -581,7 +581,6 @@ GameObject:
   - 114: {fileID: 620697378}
   - 114: {fileID: 620697377}
   - 82: {fileID: 620697382}
-  - 114: {fileID: 620697381}
   - 114: {fileID: 620697383}
   m_Layer: 5
   m_Name: TopRightCanvas
@@ -669,17 +668,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &620697381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 620697376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73982946913ac64080e0fd68e8346d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &620697382
 AudioSource:
   m_ObjectHideFlags: 0
