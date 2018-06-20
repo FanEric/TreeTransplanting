@@ -21,7 +21,6 @@ public class CSRootCheck : BaseStepDragCheck
         toolsManager.SetAnimating(true);
         yield return new WaitForSeconds(cClip.length);
         toolsManager.SetAnimating(false);
-        HideAll(kAnim.transform);
 
         audioManager.PlayAudio(3015, "装车时，树冠向后，土球向前放在车辆上，在土球两旁垫木板或砖块，防止土球滚动");
     }

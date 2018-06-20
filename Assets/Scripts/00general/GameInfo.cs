@@ -1,7 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public enum GameMode{ PRECTICE, TEST}
+﻿
+public enum GameMode{ PRACTICE, TEST}
 
 public class GameInfo {
 

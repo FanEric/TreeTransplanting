@@ -2,7 +2,7 @@
 using System.Collections;
 
 /// <summary>
-/// 铁锹挖沟
+/// 7、铁锹挖沟
 /// </summary>
 public class TQWaGouCheck : BaseStepDragCheck
 {
@@ -17,16 +17,13 @@ public class TQWaGouCheck : BaseStepDragCheck
 
     public override IEnumerator DoStep()
     {
-        GetComponent<Collider>().enabled = false;
-        GetComponent<MeshRenderer>().enabled = false;
+        HideCollider();
         kAnim.enabled = true;
         AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
         toolsManager.SetAnimating(true);
         yield return new WaitForSeconds(cClip.length);
         toolsManager.SetAnimating(false);
-        HideAll(kAnim.transform);
         TransitionTool.Instance.BeginTransition();
-
     }
 
     void OnMasking()
@@ -50,16 +47,6 @@ public class TQWaGouCheck : BaseStepDragCheck
         }
     }
 
-    void OnDestroy()
-    {
-        
-    }
-
-    //public override bool CheckStep()
-    //{
-    //    return toolsManager.CheckStep(8);
-    //}
-
     public override bool CheckDistance()
     {
         if (transform.localPosition.z > 0.3f)
@@ -70,6 +57,7 @@ public class TQWaGouCheck : BaseStepDragCheck
     public void GotoNextStep()
     {
         audioManager.PlayAudio(3008, "在球面下四分之一高度处用草绳水平进行包扎10-15圈，约20-25公分宽");
+        toolsManager.step++;
     }
 }
 

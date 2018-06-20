@@ -68,7 +68,7 @@ public class LoginManager : MonoBehaviour {
     {
         if (!CheckEmpty())
         {
-            GameInfo.gameMode = GameMode.PRECTICE;
+            GameInfo.gameMode = GameMode.PRACTICE;
             SceneManager.LoadScene("02preTransplanting");
         }
     }

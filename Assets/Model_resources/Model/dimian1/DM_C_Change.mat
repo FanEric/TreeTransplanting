@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: DM_C
+  m_Name: DM_C_Change
   m_Shader: {fileID: 4800000, guid: f8378d8a5f86dee4bab75065533bc71d, type: 3}
   m_ShaderKeywords: SIMPLE_GRASS
   m_LightmapFlags: 1
@@ -283,7 +283,7 @@ Material:
       second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _Color00
-      second: {r: 0.8014706, g: 0.7900907, b: 0.38894895, a: 1}
+      second: {r: 0.53617, g: 0.6911765, b: 0.38116348, a: 1}
     - first:
         name: _Color01
       second: {r: 0.5, g: 0.7, b: 0.3, a: 1}
@@ -304,7 +304,7 @@ Material:
       second: {r: 0.35, g: 0.35, b: 0.35, a: 1}
     - first:
         name: _SecColor00
-      second: {r: 0.375, g: 0.31810346, b: 0, a: 1}
+      second: {r: 0.14001487, g: 0.32352942, b: 0.10942908, a: 1}
     - first:
         name: _SecColor01
       second: {r: 0.2, g: 0.5, b: 0.15, a: 1}

@@ -8,9 +8,8 @@ public class DiaoCheCheck : BaseStepCheck
     public GameObject kKache;
     public Animator kBazisheng;
     public GameObject kMainTree;
-    public GameObject kOtherTree;
-    public GameObject kGrass;
-    public GameObject kNewEnvi;
+    public GameObject kOldEnv;
+    public GameObject kNewEnv;
 
     void Start()
     {
@@ -20,12 +19,9 @@ public class DiaoCheCheck : BaseStepCheck
 
     public override IEnumerator DoStep()
     {
-        base.GeneralOperOnCheckRight();
-        //kDiaoChe.SetActive(true);
-        //kKache.SetActive(true);
+        HideCollider();
         kDiaoChe.GetComponent<Animator>().enabled = true;
         kBazisheng.enabled = true;
-        GetComponent<MeshRenderer>().enabled = false;
         kMainTree.SetActive(false);
 
         AnimationClip cClip = kDiaoChe.GetComponent<Animator>().runtimeAnimatorController.animationClips[0];
@@ -34,8 +30,6 @@ public class DiaoCheCheck : BaseStepCheck
         toolsManager.SetAnimating(false);
         //动画播放完毕后显示问题
         toolsManager.ShowQuestion();
-
-        //TransitionTool.Instance.BeginTransition();
     }
 
     void OnMasking()
@@ -44,9 +38,8 @@ public class DiaoCheCheck : BaseStepCheck
         {
             kDiaoChe.SetActive(false);
             kKache.SetActive(false);
-            kOtherTree.SetActive(false);
-            kGrass.SetActive(false);
-            kNewEnvi.SetActive(true);
+            kOldEnv.SetActive(false);
+            kNewEnv.SetActive(true);
         }
     }
 

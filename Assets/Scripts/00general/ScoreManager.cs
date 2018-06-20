@@ -19,7 +19,7 @@ public class ScoreManager : MonoBehaviour {
 
 		kSubmit.interactable = false;
 
-        if (GameInfo.gameMode == GameMode.PRECTICE)
+        if (GameInfo.gameMode == GameMode.PRACTICE)
             kSubmit.gameObject.SetActive(false);
     }
 
@@ -49,7 +49,7 @@ public class ScoreManager : MonoBehaviour {
 
     public void OnGameOver()
     {
-        if (GameInfo.gameMode == GameMode.PRECTICE)
+        if (GameInfo.gameMode == GameMode.PRACTICE)
             OnTestModeOver();
         else
         {

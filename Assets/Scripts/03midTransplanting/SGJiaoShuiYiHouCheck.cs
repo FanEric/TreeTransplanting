@@ -10,7 +10,7 @@ public class SGJiaoShuiYiHouCheck : BaseStepCheck
 
     public override IEnumerator DoStep()
     {
-        base.GeneralOperOnCheckRight();
+        base.HideCollider();
         kAnimBJ.enabled = true;
         for (int i = 0; i < kTargets.Length; i++)
             kTargets[i].GetComponent<MeshRenderer>().enabled = true;
@@ -24,7 +24,6 @@ public class SGJiaoShuiYiHouCheck : BaseStepCheck
             kTargets[i].GetComponent<MeshRenderer>().enabled = false;
 
         audioManager.PlayAudio(3022, "对树干及树冠喷水保湿，每2-3天喷水一次");
-
     }
 }
 

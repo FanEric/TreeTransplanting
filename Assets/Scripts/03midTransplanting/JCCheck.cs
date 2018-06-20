@@ -2,7 +2,7 @@
 using System.Collections;
 
 /// <summary>
-/// 卷尺（高度）
+/// 5-1、卷尺（高度）
 /// </summary>
 public class JCCheck : BaseStepDragCheck {
     public Animator kAnim;
@@ -12,8 +12,7 @@ public class JCCheck : BaseStepDragCheck {
 
     public override IEnumerator DoStep()
     {
-        GetComponent<Collider>().enabled = false;
-        GetComponent<MeshRenderer>().enabled = false;
+        HideCollider();
         transform.GetChild(0).gameObject.SetActive(false);
         kAnim.enabled = true;
         AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
@@ -21,7 +20,6 @@ public class JCCheck : BaseStepDragCheck {
         yield return new WaitForSeconds(2f);//原动画的长度为4，但是中间有帧数是空，所以手动改为等待2秒
         //yield return new WaitForSeconds(cClip.length);
         toolsManager.SetAnimating(false);
-        HideAll(kAnim.transform);
         kMark.SetActive(true);
         kJT2.SetActive(true);
         kJC2.SetActive(true);

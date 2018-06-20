@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
-using System;
 
 public class BaseStepCheck : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -10,8 +9,8 @@ public class BaseStepCheck : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
 
     void Awake()
     {
-        toolsManager = GameObject.FindObjectOfType<ToolsManager>();
-        audioManager = GameObject.FindObjectOfType<AudioManager>();
+        toolsManager = FindObjectOfType<ToolsManager>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     public virtual IEnumerator DoStep()
@@ -19,30 +18,17 @@ public class BaseStepCheck : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
         yield return 0;
     }
 
-    /// <summary>
-    /// 动画播放完毕之后隐藏
-    /// 摒弃不用，改为点击别的工具的时候隐藏
-    /// </summary>
-    /// <param name="hideParent"></param>
-    public void HideAll(Transform hideParent)
-    {
-        //MeshRenderer[] mrs = hideParent.GetComponentsInChildren<MeshRenderer>();
-        //for (int i = 0; i < mrs.Length; i++)
-        //{
-        //    mrs[i].enabled = false;
-        //}
-    }
-
     void OnEnable()
     {
-        if (GameInfo.gameMode == GameMode.PRECTICE)
+        if (GameInfo.gameMode == GameMode.PRACTICE)
             GetComponent<MeshRenderer>().enabled = true;
     }
 
-    public void GeneralOperOnCheckRight()
+    public void HideCollider()
     {
+        toolsManager.step++;  //执行操作之后步骤数加一
         GetComponent<Collider>().enabled = false;
-        if (GameInfo.gameMode == GameMode.PRECTICE)
+        if (GameInfo.gameMode == GameMode.PRACTICE)
             GetComponent<MeshRenderer>().enabled = false;
     }
 

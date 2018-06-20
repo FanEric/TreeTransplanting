@@ -20,16 +20,15 @@ public class TQFengTuCheck : BaseStepDragCheck
 
     public override IEnumerator DoStep()
     {
-        GetComponent<Collider>().enabled = false;
-        GetComponent<MeshRenderer>().enabled = false;
+        HideCollider();
+        toolsManager.step++;
+
         kAnim.enabled = true;
         AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
         toolsManager.SetAnimating(true);
         yield return new WaitForSeconds(cClip.length);
         toolsManager.SetAnimating(false);
-        HideAll(kAnim.transform);
         TransitionTool.Instance.BeginTransition();
-
     }
 
     void OnMasking()
@@ -47,21 +46,11 @@ public class TQFengTuCheck : BaseStepDragCheck
     {
         if (gameObject.activeSelf)
         {
-            GotoNextStep();
             TransitionTool.Instance.maskingEvent -= OnMasking;
             TransitionTool.Instance.maskingOverEvent -= OnMaskingOver;
+            audioManager.PlayAudio(30182, "围堰浇水，（堰的直径要大于土球直径）");
         }
     }
-
-    void OnDestroy()
-    {
-        
-    }
-
-    //public override bool CheckStep()
-    //{
-    //    return toolsManager.CheckStep(18);
-    //}
 
     public override bool CheckDistance()
     {
@@ -70,9 +59,5 @@ public class TQFengTuCheck : BaseStepDragCheck
         return false;
     }
 
-    public void GotoNextStep()
-    {
-        //audioManager.PlayAudio(3019, "为防止水分蒸腾过大，需用草绳包裹从根部至离地2m左右的树干（对草绳浇水保持韧性，草绳间不留空隙）");
-    }
 }
 

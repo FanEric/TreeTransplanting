@@ -9,7 +9,7 @@ public class SGJiaoShuiCheck : BaseStepCheck
 
     public override IEnumerator DoStep()
     {
-        base.GeneralOperOnCheckRight();
+        base.HideCollider();
         kAnimBJ.enabled = true;
         for (int i = 0; i < kTargets.Length; i++)
             kTargets[i].GetComponent<MeshRenderer>().enabled = true;

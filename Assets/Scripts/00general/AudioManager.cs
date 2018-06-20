@@ -27,6 +27,7 @@ public class AudioManager : MonoBehaviour {
     public AudioClip ac316;
     public AudioClip ac317;
     public AudioClip ac318;
+    public AudioClip ac3182;
     public AudioClip ac319;
     public AudioClip ac320;
     public AudioClip ac321;
@@ -39,7 +40,6 @@ public class AudioManager : MonoBehaviour {
         if (GameInfo.gameMode == GameMode.TEST)
         {
             kDubStr.text = "";
-            //gameObject.SetActive(false);
         }
     }
 
@@ -115,6 +115,9 @@ public class AudioManager : MonoBehaviour {
                 break;
             case 3018:
                 source.clip = ac318;
+                break;
+            case 30182:
+                source.clip = ac3182;
                 break;
             case 3019:
                 source.clip = ac319;

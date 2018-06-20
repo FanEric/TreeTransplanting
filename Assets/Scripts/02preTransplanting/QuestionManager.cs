@@ -12,7 +12,7 @@ public class QuestionManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        if (GameInfo.gameMode == GameMode.PRECTICE)
+        if (GameInfo.gameMode == GameMode.PRACTICE)
         {
             SystemSettings ss = GameObject.FindObjectOfType<SystemSettings>();
             if(ss) ss.ShowBackBtn();

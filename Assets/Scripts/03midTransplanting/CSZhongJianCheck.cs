@@ -10,19 +10,19 @@ public class CSZhongJianCheck : BaseStepDragCheck
 
     public override IEnumerator DoStep()
     {
-        //kAnim.gameObject.SetActive(true);
-        GetComponent<Collider>().enabled = false;
-        GetComponent<MeshRenderer>().enabled = false;
+        HideCollider();
+        toolsManager.step++;
+
         kAnim.enabled = true;
         kAnim.GetComponentInChildren<MeshRenderer>().enabled = true;
         AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
         toolsManager.SetAnimating(true);
         yield return new WaitForSeconds(cClip.length);
-        HideAll(kAnim.transform);
 
         audioManager.PlayAudio(3013, "计算土球重量，安排相应的起重工具和运输车辆。W=4/3πr3β*2/3(w-土球的重量；4/3πr3-球体公式；β-土壤容重（一般取1.7-1.8）；2/3体积系数）r=100");
+        toolsManager.step++;
 
-        if (GameInfo.gameMode == GameMode.PRECTICE)
+        if (GameInfo.gameMode == GameMode.PRACTICE)
             yield return new WaitForSeconds(30f);
         toolsManager.SetAnimating(false);
         //第13步，没有操作，只在界面上显示重量计算

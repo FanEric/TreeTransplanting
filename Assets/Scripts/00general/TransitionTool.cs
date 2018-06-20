@@ -29,7 +29,7 @@ public class TransitionTool : MonoBehaviour {
 
     void FadeOut()
     {
-        Debug.Log("FadeOut");
+        //Debug.Log("FadeOut");
         if (maskingEvent != null)
             maskingEvent();
 

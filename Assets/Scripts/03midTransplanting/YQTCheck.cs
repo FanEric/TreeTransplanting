@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//0、拖动刷子，蘸取油漆，在雪松树干阴面画圈编号1
 public class YQTCheck : BaseStepCheck
 {
     public Animator kAnim;
@@ -8,19 +9,15 @@ public class YQTCheck : BaseStepCheck
 
     public override IEnumerator DoStep()
     {
-        //if (toolsManager.CheckStep(1))
-        {
-            base.GeneralOperOnCheckRight();
-            kAnim.enabled = true;
+        HideCollider();
+        kAnim.enabled = true;
 
-            AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
-            toolsManager.SetAnimating(true);
-            yield return new WaitForSeconds(cClip.length);
-            toolsManager.SetAnimating(false);
-            HideAll(transform.parent);
+        AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
+        toolsManager.SetAnimating(true);
+        yield return new WaitForSeconds(cClip.length);
+        toolsManager.SetAnimating(false);
 
-            toolsManager.kCursorCur = kCursor;
-        }
+        toolsManager.kCursorCur = kCursor;
     }
 }
 

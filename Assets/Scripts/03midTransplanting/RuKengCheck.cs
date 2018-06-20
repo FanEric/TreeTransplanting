@@ -8,14 +8,14 @@ public class RuKengCheck : BaseStepCheck
 
     public override IEnumerator DoStep()
     {
-        base.GeneralOperOnCheckRight();
+        HideCollider();
         kAnim.enabled = true;
         AnimationClip cClip = kAnim.GetComponent<Animator>().runtimeAnimatorController.animationClips[0];
         toolsManager.SetAnimating(true);
         yield return new WaitForSeconds(cClip.length);
         toolsManager.SetAnimating(false);
 
-        audioManager.PlayAudio(3018, "边填土边踏实，让土壤贴近树根不留空隙，填到高于原来地面5cm左右为止，围堰浇水，（堰的直径要大于土球直径）");
+        audioManager.PlayAudio(3018, "边填土边踏实，让土壤贴近树根不留空隙，填到高于原来地面5cm左右为止");
     }
 }
 

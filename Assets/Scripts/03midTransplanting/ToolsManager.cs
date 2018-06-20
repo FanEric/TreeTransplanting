@@ -28,11 +28,10 @@ public class ToolsManager : MonoBehaviour
     public GameObject kToolsContainerBefore;
     public GameObject kToolsContainerAfter;
 
-
     private CursorMode cursorMode = CursorMode.Auto;
 	private Vector2 hotSpot = new Vector2(32, 32);
 
-    public int step = 1;
+    public int step = 0;
     Button[] btnTools;
 
     private int cQuestionId = 305;
@@ -46,7 +45,6 @@ public class ToolsManager : MonoBehaviour
         InitQuestionModule();
 
         btnTools = toolsContainer.GetComponentsInChildren<Button>();
-        //EnableTools(false);
         SetAnimating(true);
     }
     void OnBeginBefore()
@@ -143,14 +141,13 @@ public class ToolsManager : MonoBehaviour
         Debug.Log("s:step--> " + s + "--" + step);
         if (s == step)
         {
-            step++;
-            //Debug.Log("OK");
+            //step++;
             return true;
         }
         else
         {
             int score = 1;
-            if (step == 1 || step == 5 || step == 7 || step == 8 || step == 9 || step == 17 || step == 19)
+            if (step == 0 || step == 1 || step == 5 || step == 7 || step == 8 || step == 9 || step == 17 || step == 19)
                 score = 2;
             scoreManager.UpdateScore(score);
             Debug.Log("wrong");
@@ -171,6 +168,7 @@ public class ToolsManager : MonoBehaviour
 
     void Update()
 	{
+        //发布的时候一定要打开！！！
         //EnableTools(!isAnimating);
         SetCursor();
     }

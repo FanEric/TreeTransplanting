@@ -26,12 +26,12 @@ public class ToolHandle : MonoBehaviour {
 
     void OnButton()
     {
-        toolManager.kCursorCur = kCursor;
-        
         int cStep = toolManager.GetCurrentStep();
 
         if ((controledIndex + 1) <= steps.Length && toolManager.CheckStep(steps[controledIndex]))     //操作步骤正确
         {
+            //换鼠标指针
+            toolManager.kCursorCur = kCursor;
             //隐藏上一步场景
             if (kLastScene != null)
                 kLastScene.SetActive(false);
@@ -51,7 +51,7 @@ public class ToolHandle : MonoBehaviour {
         }
         else    //操作步骤错误
         {
-            toolManager.CheckStep(-1);
+            //toolManager.CheckStep(-1);
             toolManager.kMotion.transform.SetParent(transform);
             toolManager.kMotion.transform.localPosition = new Vector3(0, 200, 0);
             toolManager.kMotion.Show();

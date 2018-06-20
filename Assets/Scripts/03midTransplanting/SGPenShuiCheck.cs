@@ -8,7 +8,7 @@ public class SGPenShuiCheck : BaseStepCheck
 
     public override IEnumerator DoStep()
     {
-        base.GeneralOperOnCheckRight();
+        HideCollider();
         kAnimBJ.enabled = true;
 
         kAnimBJ.transform.GetChild(0).gameObject.SetActive(true);
@@ -21,7 +21,6 @@ public class SGPenShuiCheck : BaseStepCheck
         kAnimBJ.transform.GetChild(0).gameObject.SetActive(false);
 
         audioManager.PlayAudio(3023, "注射营养液补充营养，0.05-0.1%的硫酸亚铁溶液稀释200-300倍");
-
     }
 }
 

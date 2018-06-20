@@ -9,11 +9,11 @@ public class YYYCheck : BaseStepCheck
 
     public override IEnumerator DoStep()
     {
-        base.GeneralOperOnCheckRight();
+        HideCollider();
         kTarget.GetComponent<MeshRenderer>().enabled = true;
 
         toolsManager.SetAnimating(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         toolsManager.SetAnimating(false);
 
         scoreManager.OnGameOver();

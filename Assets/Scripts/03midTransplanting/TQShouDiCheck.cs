@@ -2,7 +2,7 @@
 using System.Collections;
 
 /// <summary>
-/// 铁锹收底
+/// 9、铁锹收底
 /// </summary>
 public class TQShouDiCheck : BaseStepDragCheck
 {
@@ -17,16 +17,14 @@ public class TQShouDiCheck : BaseStepDragCheck
 
     public override IEnumerator DoStep()
     {
-        GetComponent<Collider>().enabled = false;
-        GetComponent<MeshRenderer>().enabled = false;
+        HideCollider();
+
         kAnim.enabled = true;
         AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
         toolsManager.SetAnimating(true);
         yield return new WaitForSeconds(cClip.length);
         toolsManager.SetAnimating(false);
-        HideAll(kAnim.transform);
         TransitionTool.Instance.BeginTransition();
-
     }
 
     void OnMasking()
@@ -49,17 +47,7 @@ public class TQShouDiCheck : BaseStepDragCheck
             TransitionTool.Instance.maskingOverEvent -= OnMaskingOver;
         }
     }
-
-    void OnDestroy()
-    {
-       
-    }
-
-    //public override bool CheckStep()
-    //{
-    //    return toolsManager.CheckStep(10);
-    //}
-
+    
     public override bool CheckDistance()
     {
         if (transform.localPosition.y < 0.9f)
@@ -70,6 +58,7 @@ public class TQShouDiCheck : BaseStepDragCheck
     public void GotoNextStep()
     {
         audioManager.PlayAudio(3010, "将土球从上到下修整成上大下小圆滑的球状");
+        toolsManager.step++;
     }
 }
 

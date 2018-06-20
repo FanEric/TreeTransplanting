@@ -17,16 +17,15 @@ public class TQYuanHuaCheck : BaseStepDragCheck
 
     public override IEnumerator DoStep()
     {
-        GetComponent<Collider>().enabled = false;
-        GetComponent<MeshRenderer>().enabled = false;
+        HideCollider();
+        toolsManager.step++;
+
         kAnim.enabled = true;
         AnimationClip cClip = kAnim.runtimeAnimatorController.animationClips[0];
         toolsManager.SetAnimating(true);
         yield return new WaitForSeconds(cClip.length);
         toolsManager.SetAnimating(false);
-        HideAll(kAnim.transform);
         TransitionTool.Instance.BeginTransition();
-
     }
 
     void OnMasking()
@@ -46,19 +45,9 @@ public class TQYuanHuaCheck : BaseStepDragCheck
         {
             TransitionTool.Instance.maskingEvent -= OnMasking;
             TransitionTool.Instance.maskingOverEvent -= OnMaskingOver;
-            GotoNextStep();
+            audioManager.PlayAudio(3011, "将草绳一端固定在树干上，从上到下倾斜缠绕；第二层与第一层交叉压花缠绕");
         }
     }
-
-    void OnDestroy()
-    {
-       
-    }
-
-    //public override bool CheckStep()
-    //{
-    //    return toolsManager.CheckStep(11);
-    //}
 
     public override bool CheckDistance()
     {
@@ -67,9 +56,5 @@ public class TQYuanHuaCheck : BaseStepDragCheck
         return false;
     }
 
-    public void GotoNextStep()
-    {
-        audioManager.PlayAudio(3011, "将草绳一端固定在树干上，从上到下倾斜缠绕；第二层与第一层交叉压花缠绕");
-    }
 }
 

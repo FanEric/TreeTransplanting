@@ -6,11 +6,10 @@ public class CSZanShuiCheck : BaseStepCheck
 {
     public Animator kAnimBJ;
     public GameObject kShuguancaosheng;
-    //public GameObject kShuguancaoshengCo;
 
     public override IEnumerator DoStep()
     {
-        base.GeneralOperOnCheckRight();
+        HideCollider();
         kAnimBJ.enabled = true;
 
         AnimationClip cClip = kAnimBJ.runtimeAnimatorController.animationClips[0];
@@ -20,7 +19,6 @@ public class CSZanShuiCheck : BaseStepCheck
         kAnimBJ.enabled = false;
 
         kShuguancaosheng.SetActive(true);
-        //kShuguancaoshengCo.SetActive(true);
     }
 }
 
