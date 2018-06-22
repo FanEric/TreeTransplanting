@@ -36,7 +36,6 @@ public class ToolHandle : MonoBehaviour {
             if (kLastScene != null)
                 kLastScene.SetActive(false);
             //显示当前步骤
-            //controledIndex = cStep - 1;
             kControledObjs[controledIndex].SetActive(true);
             kLastScene = kControledObjs[controledIndex];
             //步骤7以后需要隐藏kDM_A

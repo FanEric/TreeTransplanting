@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using SimpleJSON;
 
-public class Utils : MonoBehaviour
+public class Utils
 {
-    //
     private static List<QuestionEntity> qes = null;
 
     /// <summary>
@@ -55,19 +54,21 @@ public class Utils : MonoBehaviour
         }
     }
 
-
-
     public static QuestionEntity GetQuestionById(int id)
     {
         for (int i = 0; i < qes.Count; i++)
-        {
             if (qes[i].questionId == id)
-            {
                 return qes[i];
-            }
-        }
         return null;
     }
 
+    public static void ClearQes()
+    {
+        if (qes != null)
+        {
+            qes.Clear();
+            qes = null;
+        }
+    }
 }
 

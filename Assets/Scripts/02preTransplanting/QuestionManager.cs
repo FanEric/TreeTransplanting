@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -14,7 +13,7 @@ public class QuestionManager : MonoBehaviour {
     void Start () {
         if (GameInfo.gameMode == GameMode.PRACTICE)
         {
-            SystemSettings ss = GameObject.FindObjectOfType<SystemSettings>();
+            SystemSettings ss = FindObjectOfType<SystemSettings>();
             if(ss) ss.ShowBackBtn();
         }
             
@@ -47,7 +46,6 @@ public class QuestionManager : MonoBehaviour {
 
     void OnDestroy()
     {
-        Debug.Log("OnDestroy");
         questionModule.questionOverEvent -= DoQuestionOver;
     }
 }

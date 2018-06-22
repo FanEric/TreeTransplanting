@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections;
 
 public class LoginManager : MonoBehaviour {
 
@@ -24,17 +23,17 @@ public class LoginManager : MonoBehaviour {
         kClassHint = mTrans.FindChild("InputField_class/Text_hint").gameObject;
         kPractice = mTrans.FindChild("Button_practice").GetComponent<Button>();
         kTest = mTrans.FindChild("Button_test").GetComponent<Button>();
-        //kQuit = mTrans.FindChild("Button_quit").GetComponent<Button>();
 
         kUsername.onValueChanged.AddListener(HideNameHintOnChange);
         kUserclass.onValueChanged.AddListener(HideClassHintOnChange);
         kPractice.onClick.AddListener(OnPractice);
         kTest.onClick.AddListener(OnTest);
-        //kQuit.onClick.AddListener(OnQuit);
 
         kNameHint.SetActive(false);
         kClassHint.SetActive(false);
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+
+        Utils.ClearQes();
     }
 
     void HideNameHintOnChange(string str)

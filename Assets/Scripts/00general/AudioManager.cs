@@ -46,9 +46,7 @@ public class AudioManager : MonoBehaviour {
     public void PlayAudio(int qid, string dubStr)
     {
         if (GameInfo.gameMode == GameMode.TEST)
-        {
             return;
-        }
         if (source.isPlaying)
             source.Stop();
         switch (qid)
