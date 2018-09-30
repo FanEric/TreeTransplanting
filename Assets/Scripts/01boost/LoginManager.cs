@@ -15,14 +15,14 @@ public class LoginManager : MonoBehaviour {
     private Button kQuit;
 	// Use this for initialization
 	void Start () {
-        mTrans = transform.FindChild("Panel");
+        mTrans = transform.Find("Panel");
 
-        kUsername = mTrans.FindChild("InputField_name").GetComponent<InputField>();
-        kUserclass = mTrans.FindChild("InputField_class").GetComponent<InputField>();
-        kNameHint = mTrans.FindChild("InputField_name/Text_hint").gameObject;
-        kClassHint = mTrans.FindChild("InputField_class/Text_hint").gameObject;
-        kPractice = mTrans.FindChild("Button_practice").GetComponent<Button>();
-        kTest = mTrans.FindChild("Button_test").GetComponent<Button>();
+        kUsername = mTrans.Find("InputField_name").GetComponent<InputField>();
+        kUserclass = mTrans.Find("InputField_class").GetComponent<InputField>();
+        kNameHint = mTrans.Find("InputField_name/Text_hint").gameObject;
+        kClassHint = mTrans.Find("InputField_class/Text_hint").gameObject;
+        kPractice = mTrans.Find("Button_practice").GetComponent<Button>();
+        kTest = mTrans.Find("Button_test").GetComponent<Button>();
 
         kUsername.onValueChanged.AddListener(HideNameHintOnChange);
         kUserclass.onValueChanged.AddListener(HideClassHintOnChange);

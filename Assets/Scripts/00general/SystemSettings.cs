@@ -1,14 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class SystemSettings : MonoBehaviour{
     Transform mTrans;
+
+    public GameObject kMovieContainer;
+    public VideoPlayer kMovie;
 
     private Button kSound;
     private Button kSoundMute;
     private Button kQuit;
     private Button kBack;
+    private Button kVideo;
 
     private AudioSource kSource;
 
@@ -18,16 +23,18 @@ public class SystemSettings : MonoBehaviour{
 
         mTrans = GameObject.Find("TopRightCanvas").transform;
 
-        kSound = mTrans.FindChild("Button_music").GetComponent<Button>();
-        kSoundMute = mTrans.FindChild("Button_music_mute").GetComponent<Button>();
-        kQuit = mTrans.FindChild("Button_quit").GetComponent<Button>();
-        kBack = mTrans.FindChild("Button_back").GetComponent<Button>();
-		kSource = mTrans.FindChild("BgMusic").GetComponent<AudioSource>();
+        kSound = mTrans.Find("Button_music").GetComponent<Button>();
+        kSoundMute = mTrans.Find("Button_music_mute").GetComponent<Button>();
+        kQuit = mTrans.Find("Button_quit").GetComponent<Button>();
+        kBack = mTrans.Find("Button_back").GetComponent<Button>();
+        kVideo = mTrans.Find("Button_video").GetComponent<Button>();
+        kSource = mTrans.Find("BgMusic").GetComponent<AudioSource>();
 
         kSound.onClick.AddListener(OnMuteOn);
         kSoundMute.onClick.AddListener(OnMuteOff);
         kQuit.onClick.AddListener(OnQuit);
         kBack.onClick.AddListener(OnBack);
+        kVideo.onClick.AddListener(OnPlayVideo);
 
         kBack.gameObject.SetActive(false);
         OnMuteOff();
@@ -46,6 +53,25 @@ public class SystemSettings : MonoBehaviour{
         kSound.gameObject.SetActive(true);
         kSource.mute = false;
     }
+
+    void OnPlayVideo()
+    {
+        if (kMovie.isPlaying)
+        {
+            kMovie.Stop();
+            kMovieContainer.SetActive(false);
+
+            OnMuteOff();
+        }
+        else
+        {
+            kMovieContainer.SetActive(true);
+            kMovie.Play();
+
+            OnMuteOn();
+        }
+    }
+
 
     void OnQuit()
     {

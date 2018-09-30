@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
 
 #ifndef GRASS_GEOM
@@ -33,7 +35,7 @@ inline FS_INPUT geomToFrag(GS_OUTPUT v)
 
 	#ifndef SHADOWPASS
 		#if UNITY_VERSION < 540
-			o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+			o.pos = UnityObjectToClipPos(v.vertex);
 		#else
 			o.pos = UnityObjectToClipPos(v.vertex);
 		#endif

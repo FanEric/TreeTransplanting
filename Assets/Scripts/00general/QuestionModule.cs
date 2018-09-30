@@ -30,11 +30,11 @@ public class QuestionModule : MonoBehaviour
     {
         mTrans = transform;
         
-        kQuestionName = mTrans.FindChild("Text_questionName").GetComponent<Text>();
-        kOptions = mTrans.FindChild("Options").GetComponentsInChildren<Toggle>();
-        kSubmit = mTrans.FindChild("Button_ok").GetComponent<Button>();
+        kQuestionName = mTrans.Find("Text_questionName").GetComponent<Text>();
+        kOptions = mTrans.Find("Options").GetComponentsInChildren<Toggle>();
+        kSubmit = mTrans.Find("Button_ok").GetComponent<Button>();
         kSubmit.onClick.AddListener(OnSubmit);
-        kMotion = mTrans.FindChild("Image_motion").GetComponent<Image>();
+        kMotion = mTrans.Find("Image_motion").GetComponent<Image>();
 		kSource = GetComponent<AudioSource> ();
 
         ResetToggles();
@@ -66,7 +66,7 @@ public class QuestionModule : MonoBehaviour
                 kOptions[i].gameObject.SetActive(false);
                 continue;
             }
-            kOptions[i].transform.FindChild("Label_option").GetComponent<Text>().text = randomOptions[i].optionName;
+            kOptions[i].transform.Find("Label_option").GetComponent<Text>().text = randomOptions[i].optionName;
             kOptions[i].transform.GetComponent<OptionState>().optionId = randomOptions[i].optionId;
         }
         correctAnswer = qe.answers;

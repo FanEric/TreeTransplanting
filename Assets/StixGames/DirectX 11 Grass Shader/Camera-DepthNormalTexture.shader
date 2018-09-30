@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Hidden/Camera-DepthNormalTexture" {
 Properties {
 	_MainTex ("", 2D) = "white" {}
@@ -19,7 +21,7 @@ struct v2f {
 v2f vert( appdata_base v ) {
     v2f o;
 #if UNITY_VERSION < 540
-    o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+    o.pos = UnityObjectToClipPos(v.vertex);
 #else
 	o.pos = UnityObjectToClipPos(v.vertex);
 #endif
@@ -50,7 +52,7 @@ uniform float4 _MainTex_ST;
 v2f vert( appdata_base v ) {
     v2f o;
 #if UNITY_VERSION < 540
-	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+	o.pos = UnityObjectToClipPos(v.vertex);
 #else
 	o.pos = UnityObjectToClipPos(v.vertex);
 #endif
@@ -90,7 +92,7 @@ v2f vert( appdata_full v ) {
     TreeVertBark(v);
 	
 #if UNITY_VERSION < 540
-	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+	o.pos = UnityObjectToClipPos(v.vertex);
 #else
 	o.pos = UnityObjectToClipPos(v.vertex);
 #endif
@@ -125,7 +127,7 @@ v2f vert( appdata_full v ) {
     TreeVertLeaf(v);
 	
 #if UNITY_VERSION < 540
-	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+	o.pos = UnityObjectToClipPos(v.vertex);
 #else
 	o.pos = UnityObjectToClipPos(v.vertex);
 #endif
@@ -167,7 +169,7 @@ v2f vert( appdata v ) {
 	v2f o;
 	TerrainAnimateTree(v.vertex, v.color.w);
 #if UNITY_VERSION < 540
-	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+	o.pos = UnityObjectToClipPos(v.vertex);
 #else
 	o.pos = UnityObjectToClipPos(v.vertex);
 #endif
@@ -207,7 +209,7 @@ v2f vert( appdata v ) {
 	v2f o;
 	TerrainAnimateTree(v.vertex, v.color.w);
 #if UNITY_VERSION < 540
-	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+	o.pos = UnityObjectToClipPos(v.vertex);
 #else
 	o.pos = UnityObjectToClipPos(v.vertex);
 #endif
@@ -249,7 +251,7 @@ v2f vert( appdata v ) {
 	v2f o;
 	TerrainAnimateTree(v.vertex, v.color.w);
 #if UNITY_VERSION < 540
-	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+	o.pos = UnityObjectToClipPos(v.vertex);
 #else
 	o.pos = UnityObjectToClipPos(v.vertex);
 #endif
@@ -288,7 +290,7 @@ v2f vert (appdata_tree_billboard v) {
 	v2f o;
 	TerrainBillboardTree(v.vertex, v.texcoord1.xy, v.texcoord.y);
 #if UNITY_VERSION < 540
-	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+	o.pos = UnityObjectToClipPos(v.vertex);
 #else
 	o.pos = UnityObjectToClipPos(v.vertex);
 #endif
@@ -330,7 +332,7 @@ v2f vert (appdata_full v) {
 	WavingGrassBillboardVert (v);
 	o.color = v.color;
 #if UNITY_VERSION < 540
-	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+	o.pos = UnityObjectToClipPos(v.vertex);
 #else
 	o.pos = UnityObjectToClipPos(v.vertex);
 #endif
@@ -372,7 +374,7 @@ v2f vert (appdata_full v) {
 	WavingGrassVert (v);
 	o.color = v.color;
 #if UNITY_VERSION < 540
-	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+	o.pos = UnityObjectToClipPos(v.vertex);
 #else
 	o.pos = UnityObjectToClipPos(v.vertex);
 #endif

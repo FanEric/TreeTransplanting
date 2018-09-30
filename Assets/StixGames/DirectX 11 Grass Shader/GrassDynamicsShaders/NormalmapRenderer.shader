@@ -1,4 +1,6 @@
-﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 // Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
 
 Shader "Stix Games/Grass Dynamics/Normalmap Renderer"
@@ -69,7 +71,7 @@ Shader "Stix Games/Grass Dynamics/Normalmap Renderer"
 			{
 				v2f o;
 #if UNITY_VERSION < 540
-				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.vertex = UnityObjectToClipPos(v.vertex);
 #else
 				o.vertex = UnityObjectToClipPos(v.vertex);
 #endif

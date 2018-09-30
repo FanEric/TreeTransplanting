@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // Shader created with Shader Forge v1.32 
 // Shader Forge (c) Neat Corporation / Joachim Holmer - http://www.acegikmo.com/shaderforge/
 // Note: Manually altering this data may prevent you from opening it in Shader Forge
@@ -67,7 +69,7 @@ Shader "DSYZ/jiaoshuishuiliu" {
                 v.vertex.xyz += (((_Texture_var.r+_Texture_var.g)*v.normal)*_Power);
                 o.posWorld = mul(unity_ObjectToWorld, v.vertex);
                 float3 lightColor = _LightColor0.rgb;
-                o.pos = mul(UNITY_MATRIX_MVP, v.vertex );
+                o.pos = UnityObjectToClipPos(v.vertex );
                 UNITY_TRANSFER_FOG(o,o.pos);
                 return o;
             }
@@ -159,7 +161,7 @@ Shader "DSYZ/jiaoshuishuiliu" {
                 v.vertex.xyz += (((_Texture_var.r+_Texture_var.g)*v.normal)*_Power);
                 o.posWorld = mul(unity_ObjectToWorld, v.vertex);
                 float3 lightColor = _LightColor0.rgb;
-                o.pos = mul(UNITY_MATRIX_MVP, v.vertex );
+                o.pos = UnityObjectToClipPos(v.vertex );
                 UNITY_TRANSFER_FOG(o,o.pos);
                 TRANSFER_VERTEX_TO_FRAGMENT(o)
                 return o;
@@ -238,7 +240,7 @@ Shader "DSYZ/jiaoshuishuiliu" {
                 float2 node_436 = (o.uv0+(node_4010.g*_Speed)*float2(1,0));
                 float4 _Texture_var = tex2Dlod(_Texture,float4(TRANSFORM_TEX(node_436, _Texture),0.0,0));
                 v.vertex.xyz += (((_Texture_var.r+_Texture_var.g)*v.normal)*_Power);
-                o.pos = mul(UNITY_MATRIX_MVP, v.vertex );
+                o.pos = UnityObjectToClipPos(v.vertex );
                 TRANSFER_SHADOW_CASTER(o)
                 return o;
             }
